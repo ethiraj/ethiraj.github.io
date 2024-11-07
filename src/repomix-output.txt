@@ -6320,7 +6320,7 @@ const metadata = {
 
   <Hero
     id="hero"
-    title="Ethiraj Krishnamanaidu"
+   title={<span style={{ fontSize: '2rem' }}>Ethiraj Krishnamanaidu</span>}
     tagline="Principal Data & AI Architect"
     actions={[{ variant: 'primary', text: 'Contact Me', href: '#contact' }]}
   >
@@ -6363,7 +6363,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/Diya_Saree_Ceremony279.jpg',
+      src: '/da_log.png',
       alt: 'Ethiraj Krishnamanaidu',
       loading: 'eager',
     }}
