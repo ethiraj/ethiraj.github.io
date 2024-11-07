@@ -1,0 +1,279 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'Ethiraj Krishnamanaidu - Principal Data & AI Architect',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '/astro-test/' },
+        { text: 'About', href: '/astro-test/#about' },
+        { text: 'Experience', href: '/astro-test/#experience' },
+        { text: 'Projects', href: '/astro-test/#projects' },
+        { text: 'Blog', href: '/astro-test/#blog' },
+        { text: 'Github', href: 'https://github.com/yourusername' },
+      ]}
+      actions={[
+        {
+          text: 'Contact me',
+          href: '#contact',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    id="hero"
+    title="Ethiraj Krishnamanaidu"
+    tagline="Principal Data & AI Architect"
+    actions={[{ variant: 'primary', text: 'Contact Me', href: '#contact' }]}
+  >
+    <Fragment slot="subtitle">
+      Data & AI Architect behind industry-shaping platforms like OSDU and MSCI's GeoSpatial Asset Intelligence.
+      Specializing in architecting enterprise AI solutions that deliver measurable ROI. From custom LLM implementations
+      to cloud-native data platforms, I help organizations turn data challenges into competitive advantages.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/ethiraj-krishnamanaidu/',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'GitHub',
+          href: '#',
+        },
+      },
+      {
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:rajsoa@gmail.com',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/Diya_Saree_Ceremony279.jpg',
+      alt: 'Ethiraj Krishnamanaidu',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <p>
+        As a Principal Data & AI Architect, I specialize in designing and implementing cutting-edge solutions that
+        transform businesses through the power of data and artificial intelligence.
+      </p>
+      <br />
+      <p>
+        With expertise spanning cloud platforms (GCP, Azure, AWS), data engineering, and AI/ML solutions, I help
+        organizations harness the full potential of their data assets while ensuring scalability, security, and
+        innovation.
+      </p>
+      <br />
+      <p>Connect with me to discuss how we can elevate your data and AI initiatives:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="experience"
+    title="Professional Experience"
+    items={[
+      {
+        title:
+          'Director of Architecture <br /> <span class="font-normal">MSCI, Houston</span> <br /> <span class="text-sm font-normal">2022 - Present</span>',
+        description: `• Founded MSCI's AI & Data Center of Excellence, increasing AI adoption by 30%<br />
+        • Led GeoSpatial Asset Intelligence platform architecture on GCP<br />
+        • Integrated LLMs using LangChain, OpenAI, PaLM2, and VertexAI<br />
+        • Developed enterprise data pipelines with Airflow, DBT, Databricks, and Snowflake`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Lead Architect/Delivery Lead <br /> <span class="font-normal">Schlumberger, Houston</span> <br /> <span class="text-sm font-normal">2018 - 2022</span>',
+        description: `• Spearheaded OSDU Data Platform Reference Architecture development<br />
+        • Led multi-cloud implementation across GCP, Azure, AWS<br />
+        • Received Most Valuable Contributor award for OSDU Cloud Data Platform<br />
+        • Co-invented Notification and Task Management system (Patent pending)`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Cloud Application Architect <br /> <span class="font-normal">UnitedHealth Group</span> <br /> <span class="text-sm font-normal">2017 - 2018</span>',
+        description: `• Established cloud strategy and migration framework<br />
+        • Automated DevOps practices reducing setup time from weeks to minutes<br />
+        • Created ML Docker image with Spark, TensorFlow, and H2O`,
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="education"
+    title="Education & Certifications"
+    items={[
+      {
+        title: 'Professional Certifications <br />',
+        description: `• Google Professional Cloud Architect (2022)<br />
+        • Certified Kubernetes Application Developer (2021)<br />
+        • AI Product Manager Nanodegree (2020)<br />
+        • AWS Certified Solutions Architect (2016)`,
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Master of Computer Application (MCA) <br /> <span class="font-normal">University of Madras</span>',
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Technical Expertise"
+    subtitle="Comprehensive skillset in Data, AI, and Cloud Technologies"
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Data Engineering',
+        description: 'Expert in Snowflake, Databricks, DBT, Airflow, Data Pipelines, Data Mesh',
+      },
+      {
+        title: 'Artificial Intelligence',
+        description: 'LLMs, LangChain, OpenAI, Machine Learning, Deep Learning, NLP',
+      },
+      {
+        title: 'Cloud Platforms',
+        description: 'GCP, AWS, Azure, Multi-cloud architecture, Cloud-native solutions',
+      },
+      {
+        title: 'Big Data',
+        description: 'Data Warehousing, BigQuery, Data Modeling, Analytics Platforms',
+      },
+      {
+        title: 'DevOps & Infrastructure',
+        description: 'Kubernetes, Docker, CI/CD, Infrastructure as Code',
+      },
+      {
+        title: 'Programming',
+        description: 'Python, Java, SQL, Data Processing, API Development',
+      },
+      {
+        title: 'Architecture',
+        description: 'Enterprise Architecture, Solution Design, Architecture Decision Records',
+      },
+      {
+        title: 'Data Governance',
+        description: 'Data Security, Compliance, Best Practices Implementation',
+      },
+      {
+        title: 'Leadership',
+        description: 'Team Leadership, Strategic Planning, Cross-functional Collaboration',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="projects"
+    title="Featured Projects"
+    subtitle="Innovative solutions delivering real business value"
+    isReversed
+    items={[
+      {
+        title: 'Project Impact:',
+        description:
+          'Delivered location-based risk insights for 70,000+ companies through GeoSpatial Asset Intelligence platform, enabling data-driven decision making.',
+      },
+      {
+        title: 'Technical Stack:',
+        description: 'GCP, LangChain, OpenAI, Snowflake, Databricks, Airflow, Python',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/Diya_Saree_Ceremony279.jpg',
+      alt: 'GeoSpatial Analytics Platform',
+    }}
+    callToAction={{
+      text: 'View Project Details',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        AI-Powered GeoSpatial Analytics Platform
+      </h3>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to Transform Your Data Strategy?"
+    subtitle="Let's discuss how we can leverage AI and data to drive your business forward"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Touch',
+        href: '#contact',
+      },
+    ]}
+  />
+
+  <!-- BlogLatestPosts Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Insights & Thought Leadership"
+    information={`Explore my latest thoughts on data architecture, AI innovations, and digital transformation strategies.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>
