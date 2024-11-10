@@ -36,6 +36,31 @@
   .btn-tertiary {
     @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
+  @layer components {
+    .focus-area-card {
+      @apply bg-white rounded-lg shadow-lg transition-transform transform hover:-translate-y-2 p-6 text-center;
+    }
+  
+    .focus-area-icon {
+      @apply h-20 w-20 mx-auto mb-4;
+    }
+  
+    .focus-area-title {
+      @apply text-xl font-semibold text-gray-800 mb-2;
+    }
+  
+    .focus-area-description {
+      @apply text-gray-600 text-sm;
+    }
+  }
+  
+  @layer utilities {
+    .bg-focus-section {
+      background-color: var(--aw-color-bg-focus);
+    }
+  }
+  
+
 }
 
 #header.scroll > div:first-child {

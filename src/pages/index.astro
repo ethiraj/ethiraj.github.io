@@ -6,274 +6,271 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FocusAreas from '~/components/widgets/FocusAreas.astro';
 
 const metadata = {
-  title: 'Ethiraj Krishnamanaidu - Principal Data & AI Architect',
+  title: 'Ethiraj Krishnamanaidu - Data & AI Consulting for Transformative Growth',
 };
+
+// Define the focus areas content directly here
+const focusAreas = [
+  {
+    title: 'Data',
+    description: 'Building scalable, efficient containerized applications with microservices architectures.',
+    icon: '/icons/data.svg',
+  },
+  {
+    title: 'Deep Learning & AI',
+    description: 'Implementing advanced AI models for data-driven insights and automation.',
+    icon: '/icons/deep-learning.svg',
+  },
+  {
+    title: 'IoT & Edge Computing',
+    description: 'Bringing intelligence to the edge for real-time data processing and IoT applications.',
+    icon: '/icons/iot-edge.svg',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
-  <Fragment slot="header">
-    <Header
-      links={[
-        { text: 'Home', href: '#' },
-        { text: 'About', href: '#about' },
-        { text: 'Experience', href: '#experience' },
-        { text: 'Projects', href: '#projects' },
-        { text: 'Blog', href: '#blog' },
-        { text: 'Github', href: 'https://github.com/ethiraj' },
-      ]}
-      actions={[
-        {
-          text: 'Contact me',
-          href: '#contact',
-        },
-      ]}
-      isSticky
-      showToggleTheme
-    />
+ <!-- Header Section -->
+<Fragment slot="header">
+  <Header
+    links={[
+      { text: 'Home', href: '#' },
+      { text: 'About', href: '#about' },
+      { text: 'Services', href: '#services' },
+      { text: 'Projects', href: '#projects' },
+      { text: 'Blog', href: '#blog' },
+      { text: 'Contact', href: '#contact' },
+    ]}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Schedule a Consultation',
+        href: 'mailto:ethiraj.k@dataadvisors.com',
+      },
+    ]}
+    isSticky
+    showToggleTheme
+  />
+</Fragment>
+
+<Hero
+  id="hero"
+  title="Data & AI Solutions for the Modern Enterprise"
+  tagline="Helping companies turn data into a competitive advantage with 20+ years of experience."
+  actions={[{ 
+    variant: 'primary', 
+    text: 'Get Started', 
+    href: 'mailto:ethiraj.k@dataadvisors.com',
+    icon: 'tabler:mail',
+  }]}
+  classes={{
+    container: 'pt-0 pb-0', // Changed to remove all padding
+    content: 'max-w-7xl mx-auto',
+    title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+  }}
+>
+  <Fragment slot="subtitle">
+    Transform your data strategy with expertise in building cloud-native data platforms and AI-driven solutions.
+    From custom LLM integrations to enterprise-scale architectures, I work with you to create measurable impact
+    and drive innovation.
   </Fragment>
+</Hero>
 
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    id="hero"
-    title="Ethiraj Krishnamanaidu"
-    tagline="Principal Data & AI Architect"
-    actions={[{ variant: 'primary', text: 'Contact Me', href: '#contact' }]}
-  >
-    <Fragment slot="subtitle">
-      Data & AI Architect behind industry-shaping platforms like OSDU and MSCI's GeoSpatial Asset Intelligence.
-      Specializing in architecting enterprise AI solutions that deliver measurable ROI. From custom LLM implementations
-      to cloud-native data platforms, I help organizations turn data challenges into competitive advantages.
-    </Fragment>
-  </Hero>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    id="about"
-    columns={3}
-    items={[
-      {
-        icon: 'tabler:brand-linkedin',
-        callToAction: {
-          target: '_blank',
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/ethiraj-krishnamanaidu/',
-        },
+<!-- About Section -->
+<Content
+  id="about"
+  isReversed={false}
+  columns={3}
+  items={[
+    {
+      title: 'LinkedIn',
+      icon: 'tabler:brand-linkedin',
+      callToAction: {
+        target: '_blank',
+        href: 'https://www.linkedin.com/in/ethiraj-krishnamanaidu/',
       },
-      {
-        icon: 'tabler:brand-github',
-        callToAction: {
-          target: '_blank',
-          text: 'GitHub',
-          href: '#',
-        },
+    },
+    {
+      title: 'GitHub',
+      icon: 'tabler:brand-github',
+      callToAction: {
+        target: '_blank',
+        href: 'https://github.com/ethiraj',
       },
-      {
-        icon: 'tabler:mail',
-        callToAction: {
-          target: '_blank',
-          text: 'Email',
-          href: 'mailto:rajsoa@gmail.com',
-        },
+    },
+    {
+      title: 'Email',
+      icon: 'tabler:mail',
+      callToAction: {
+        target: '_blank',
+        href: 'mailto:ethiraj.k@dataadvisors.com',
       },
-    ]}
-    image={{
-      src: '~/assets/images/dp_log.png',
-      alt: 'Ethiraj Krishnamanaidu',
-      loading: 'eager',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-      <p>
-        As a Principal Data & AI Architect, I specialize in designing and implementing cutting-edge solutions that
-        transform businesses through the power of data and artificial intelligence.
-      </p>
-      <br />
-      <p>
-        With expertise spanning cloud platforms (GCP, Azure, AWS), data engineering, and AI/ML solutions, I help
-        organizations harness the full potential of their data assets while ensuring scalability, security, and
-        innovation.
-      </p>
-      <br />
-      <p>Connect with me to discuss how we can elevate your data and AI initiatives:</p>
-    </Fragment>
+    },
+  ]}
+  classes={{
+    container: 'max-w-6xl pt-0', // Added pt-0
+    title: 'text-4xl font-bold tracking-tight mb-4 font-heading',
+    items: 'gap-4',
+    item: 'bg-blue-50 dark:bg-slate-800 p-4 rounded-lg transition-transform hover:scale-105',
+  }}
+  image={{
+    src: '~/assets/images/raj.jpg',
+    alt: 'Ethiraj Krishnamanaidu',
+    loading: 'eager',
+    class: 'rounded-2xl shadow-xl'
+  }}
+>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
 
-  <!-- Steps Widget ****************** -->
+  <Fragment slot="content">
+  <div class="flex flex-col items-center sm:items-start gap-2">
+    <h2 class="text-4xl font-bold tracking-tight font-heading text-blue-800 dark:text-blue-300">
+      Ethiraj Krishnamanaidu
+    </h2>
+    <h3 class="text-lg font-medium tracking-tight font-heading text-gray-600 dark:text-gray-400">
+      Principal Data & AI Architect & Advisor
+    </h3>
+  </div>
+  <div class="space-y-6 text-gray-700 dark:text-gray-300 mt-4">
+    <p class="text-lg">
+      <p class="text-lg">
+  I am passionate about the opportunities created by modern data platforms and AI/ML. Leveraging over two decades of experience, including transformative work with MSCI, SLB/OSDU and UnitedHealthcare, I help organizations design and implement scalable, resilient data platforms and intelligent systems that drive innovation, growth, and efficiency.
+</p>
 
-  <Steps
-    id="experience"
-    title="Professional Experience"
-    items={[
-      {
-        title:
-          'Director of Architecture <br /> <span class="font-normal">MSCI, Houston</span> <br /> <span class="text-sm font-normal">2022 - Present</span>',
-        description: `• Founded MSCI's AI & Data Center of Excellence, increasing AI adoption by 30%<br />
-        • Led GeoSpatial Asset Intelligence platform architecture on GCP<br />
-        • Integrated LLMs using LangChain, OpenAI, PaLM2, and VertexAI<br />
-        • Developed enterprise data pipelines with Airflow, DBT, Databricks, and Snowflake`,
-        icon: 'tabler:briefcase',
-      },
-      {
-        title:
-          'Lead Architect/Delivery Lead <br /> <span class="font-normal">Schlumberger, Houston</span> <br /> <span class="text-sm font-normal">2018 - 2022</span>',
-        description: `• Spearheaded OSDU Data Platform Reference Architecture development<br />
-        • Led multi-cloud implementation across GCP, Azure, AWS<br />
-        • Received Most Valuable Contributor award for OSDU Cloud Data Platform<br />
-        • Co-invented Notification and Task Management system (Patent pending)`,
-        icon: 'tabler:briefcase',
-      },
-      {
-        title:
-          'Cloud Application Architect <br /> <span class="font-normal">UnitedHealth Group</span> <br /> <span class="text-sm font-normal">2017 - 2018</span>',
-        description: `• Established cloud strategy and migration framework<br />
-        • Automated DevOps practices reducing setup time from weeks to minutes<br />
-        • Created ML Docker image with Spark, TensorFlow, and H2O`,
-        icon: 'tabler:briefcase',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
+    </p>
 
-  <!-- Steps Widget ****************** -->
+    <p>
+      With deep expertise in cloud-native architecture, AI-driven solutions, and data engineering, I focus on aligning data strategies with business goals, fostering innovation through AI/ML solutions, and transforming data practices to support seamless scalability and robust data governance.
+    </p>
 
-  <Steps
-    id="education"
-    title="Education & Certifications"
-    items={[
-      {
-        title: 'Professional Certifications <br />',
-        description: `• Google Professional Cloud Architect (2022)<br />
-        • Certified Kubernetes Application Developer (2021)<br />
-        • AI Product Manager Nanodegree (2020)<br />
-        • AWS Certified Solutions Architect (2016)`,
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Master of Computer Application (MCA) <br /> <span class="font-normal">University of Madras</span>',
-        icon: 'tabler:school',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
+    <p>
+      My commitment is to empower businesses to harness the transformative potential of data and AI, providing them with strategic insights and resilient architectures that are built for the future.
+    </p>
+  </div>
+</Fragment>
 
-  <!-- Features3 Widget ************** -->
+</Content>
 
+
+
+<!-- Key Focus Areas Section with Enhanced Styling -->
+<FocusAreas
+  title="Key Focus Areas"
+  subtitle="Specialized expertise to drive data and AI transformation"
+  areas={[
+    {
+      title: 'Data Architecture & Engineering',
+      description: 'Designing scalable, cloud-native data platforms utilizing Lakehouse and Data Mesh architectures. Expertise in creating resilient data infrastructure that enables seamless data flow and optimized performance.',
+      icon: '/icons/data_architecture.png',
+      iconStyle: 'w-16 h-16 p-4 bg-blue-200 rounded-full mx-auto', // Centered icon with background color
+    },
+    {
+      title: 'AI & Machine Learning',
+      description: 'Implementing advanced AI and ML solutions, including custom LLMs, to drive automation and enhance decision-making. Skilled in leveraging tools like OpenAI, VertexAI, and LangChain to unlock the potential of AI-driven insights.',
+      icon: '/icons/ai_ml.png',
+      iconStyle: 'w-16 h-16 p-4 bg-purple-200 rounded-full mx-auto',
+    },
+ 
+    {
+      title: 'Data Governance & Compliance',
+      description: 'Establishing robust data governance frameworks to ensure compliance, data quality, and security. Experience in implementing data governance strategies that align with business objectives and industry standards.',
+      icon: '/icons/data_gov.png',
+      iconStyle: 'w-16 h-16 p-4 bg-yellow-200 rounded-full mx-auto',
+    },
+  ]}
+  classes={{
+    container: 'max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-4', // Two-column layout
+    card: 'flex flex-col items-center text-center gap-4 p-6 rounded-lg border shadow-md hover:shadow-lg transition-shadow border-opacity-20', // Center-aligned layout with hover effect
+    title: 'text-xl font-bold text-gray-900 mt-4', // Improved title font size
+    description: 'text-gray-700 dark:text-gray-300', // Consistent description color
+  }}
+/>
+
+
+  
+
+<!-- Project Highlights Section -->
+<Content
+  id="projects"
+  title="Project Highlights"
+  subtitle="Case studies showcasing real business impact"
+  isReversed
+  items={[
+    {
+      title: 'NextGen Data Platform for a Leading Financial Services Firm',
+      description: 'Collaborated with senior management to define and implement a comprehensive and data strategy, driving innovation and adoption of advanced technologies. Architected a NextGen Data Platform leveraging Lakehouse and Data Mesh architectures, optimizing scalability, security, and performance for the organization’s data needs.',
+    },
+    {
+      title: 'Open Data Platform for Energy Industry Leaders',
+      description: 'Led the development of a reference architecture for an open data ecosystem in collaboration with energy industry leaders. This platform has revolutionized data accessibility and collaboration, setting a new standard for multi-cloud ecosystems in the sector.',
+    },
+    {
+      title: 'AI-Driven Data Collection & Analysis',
+      description: 'Enhanced data collection and risk analysis through AI-driven solutions, increasing accuracy and operational efficiency. This AI integration empowered data-driven insights, setting a new standard for data intelligence and strategic decision-making.',
+    },
+    {
+      title: 'Multi-Cloud Data Engineering for a Global Energy Company',
+      description: 'Designed and implemented a multi-cloud CI/CD pipeline and Service Provider Interfaces (SPIs), improving operational efficiency across global teams and multiple cloud providers in a large-scale energy company.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/data_ai.png',
+    alt: 'GeoSpatial Analytics Platform',
+  }}
+  callToAction={{
+    text: 'Learn More',
+    icon: 'tabler:chevron-right',
+    href: '#',
+  }}
+>
+</Content>
+
+<!-- Services Section -->
   <Features3
-    title="Technical Expertise"
-    subtitle="Comprehensive skillset in Data, AI, and Cloud Technologies"
+    id="services"
+    title="Consulting Services"
+    subtitle="Expert solutions to elevate your data strategy"
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Data Engineering',
-        description: 'Expert in Snowflake, Databricks, DBT, Airflow, Data Pipelines, Data Mesh',
+        title: 'Data Platform Strategy & Architecture',
+        description: 'Design and build scalable, cloud-native data platforms to unify and unlock data potential.',
       },
       {
-        title: 'Artificial Intelligence',
-        description: 'LLMs, LangChain, OpenAI, Machine Learning, Deep Learning, NLP',
+        title: 'AI & Machine Learning',
+        description: 'Develop custom AI solutions from LLM implementations to advanced machine learning models.',
       },
       {
-        title: 'Cloud Platforms',
-        description: 'GCP, AWS, Azure, Multi-cloud architecture, Cloud-native solutions',
-      },
-      {
-        title: 'Big Data',
-        description: 'Data Warehousing, BigQuery, Data Modeling, Analytics Platforms',
-      },
-      {
-        title: 'DevOps & Infrastructure',
-        description: 'Kubernetes, Docker, CI/CD, Infrastructure as Code',
-      },
-      {
-        title: 'Programming',
-        description: 'Python, Java, SQL, Data Processing, API Development',
-      },
-      {
-        title: 'Architecture',
-        description: 'Enterprise Architecture, Solution Design, Architecture Decision Records',
-      },
-      {
-        title: 'Data Governance',
-        description: 'Data Security, Compliance, Best Practices Implementation',
-      },
-      {
-        title: 'Leadership',
-        description: 'Team Leadership, Strategic Planning, Cross-functional Collaboration',
+        title: 'Data Governance & Compliance',
+        description: 'Establish robust data governance frameworks to ensure compliance and data quality.',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
 
-  <Content
-    id="projects"
-    title="Featured Projects"
-    subtitle="Innovative solutions delivering real business value"
-    isReversed
-    items={[
-      {
-        title: 'Project Impact:',
-        description:
-          'Delivered location-based risk insights for 70,000+ companies through GeoSpatial Asset Intelligence platform, enabling data-driven decision making.',
-      },
-      {
-        title: 'Technical Stack:',
-        description: 'GCP, LangChain, OpenAI, Snowflake, Databricks, Airflow, Python',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/dp_log.png',
-      alt: 'GeoSpatial Analytics Platform',
-    }}
-    callToAction={{
-      text: 'View Project Details',
-      icon: 'tabler:chevron-right',
-      href: '#',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        AI-Powered GeoSpatial Analytics Platform
-      </h3>
-    </Fragment>
-  </Content>
+  <!-- Simplified Call to Action Section -->
+<CallToAction
+  title="Ready to Transform Your Data and AI Capabilities?"
+  subtitle="Let’s explore how we can unlock your data’s potential."
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Contact Me',
+      href: 'mailto:ethiraj.k@dataadvisors.com',
+    },
+  ]}
+/>
 
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Ready to Transform Your Data Strategy?"
-    subtitle="Let's discuss how we can leverage AI and data to drive your business forward"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get in Touch',
-        href: '#contact',
-      },
-    ]}
-  />
-
-  <!-- BlogLatestPosts Widget **************** -->
-
+  <!-- Blog Section -->
   <BlogLatestPosts
     id="blog"
     title="Insights & Thought Leadership"
-    information={`Explore my latest thoughts on data architecture, AI innovations, and digital transformation strategies.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
+    information="Explore articles on data architecture, AI, and strategies for digital transformation."
+  />
 </Layout>
