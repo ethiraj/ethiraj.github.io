@@ -78,7 +78,6 @@ const metadata = {
         columns={3}
         items={[
             {
-        
                 icon: 'tabler:brand-linkedin',
                 callToAction: {
                     target: '_blank',
@@ -105,16 +104,21 @@ const metadata = {
             },
         ]}
         classes={{
-            container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[Open+Sans]',
+            container: 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[Open+Sans]',
             title: 'text-4xl font-bold tracking-tight mb-8',
             items: 'gap-8',
             item: 'bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105'
         }}
         image={{
-            src: '~/assets/images/raj.jpg',
+            src: '~/assets/images/Ethiraj_Standing.JPG',
             alt: 'Ethiraj Krishnamanaidu',
             loading: 'eager',
-            class: 'rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm transform -translate-x-4 translate-y-4'
+            width: 400,
+            height: 500,
+            fit: 'cover',
+            objectPosition: 'top',
+            class: 'object-top max-w-sm bg-transparent',  // Added bg-transparent
+            sizes: "(max-width: 768px) 100vw, 30vw"
         }}
     >
         <Fragment slot="content">
