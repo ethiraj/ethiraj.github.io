@@ -40,6 +40,8 @@ jobs:
       - name: Format code
         run: |
           npm run format || true
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git diff --exit-code || { git add . && git commit -m "Auto-format code"; }
       - name: Run checks
         run: npm run check  # Remove `|| true` to fail on errors
