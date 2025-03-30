@@ -52,7 +52,7 @@ jobs:
         run: npm run check || true  # Continue even if checks fail
 
   deploy:
-    needs: [build]  # Remove check dependency since we're making it non-blocking
+    needs: [build]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     environment:
