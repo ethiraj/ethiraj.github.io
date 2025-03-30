@@ -1,12 +1,10 @@
-name: GitHub Actions
+name: Build, Check, and Deploy
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
@@ -18,13 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version:
-          - 18
-          - 20
-          - 22
+        node-version: [18, 20, 22]  # Simplified array syntax
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js v${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
@@ -42,17 +37,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Run format and lint fixes before check
       - name: Format code
         run: |
           npm run format || true
-          git add .
-          git diff --staged --quiet || git commit -m "Auto-format code" || true
+          git diff --exit-code || { git add . && git commit -m "Auto-format code"; }
       - name: Run checks
-        run: npm run check || true  # Continue even if checks fail
+        run: npm run check  # Remove `|| true` to fail on errors
 
   deploy:
-    needs: [build]
+    needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     environment:
@@ -65,14 +58,12 @@ jobs:
         with:
           node-version: 18
           cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Build website
-        run: npm run build
-      - name: Upload artifact
+      - run: npm ci
+      - run: npm run build
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: dist
+          path: ./dist  # Explicit path (best practice)
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
