@@ -58,6 +58,22 @@
     .bg-focus-section {
       background-color: var(--aw-color-bg-focus);
     }
+
+    .glass {
+      @apply bg-white/10 dark:bg-gray-900/40 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-lg;
+    }
+
+    .glass-hover {
+      @apply hover:bg-white/20 dark:hover:bg-gray-800/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+    }
+
+    .text-gradient {
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400;
+    }
+
+    .gradient-border {
+      @apply relative before:absolute before:inset-0 before:-z-10 before:p-[1px] before:bg-gradient-to-r before:from-blue-500 before:via-purple-500 before:to-indigo-500 before:rounded-xl before:content-[''] bg-white dark:bg-gray-900 rounded-xl;
+    }
   }
   
 
