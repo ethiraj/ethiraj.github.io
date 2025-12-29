@@ -1,0 +1,170 @@
+---
+import PhaseCard from './PhaseCard.astro';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+
+const { id, isDark = false, containerClass = '', bg = await Astro.slots.render('bg') } = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${containerClass}`} bg={bg}>
+  <div class="relative py-12 px-4 md:px-8">
+    
+    <!-- Phase 1: Top Left -->
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+      <div class="w-full md:w-1/3 relative z-10">
+        <PhaseCard
+          phase="Phase 1"
+          title="Kickoff"
+          color="blue"
+          description="We align on priorities, outcomes, and what success really means for your team—so everything that follows is <strong>built around your goals.</strong>"
+        >
+          <div slot="icon" class="w-full h-full flex justify-center items-center">
+             <!-- Custom SVG for Phase 1 (Calendar) -->
+             <svg viewBox="0 0 200 200" class="w-32 h-32" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(50, 40)">
+                  <rect x="0" y="20" width="100" height="90" rx="8" fill="#FFFBEB" stroke="#1F2937" stroke-width="2"/>
+                  <path d="M0 30 Q0 20 8 20 H92 Q100 20 100 30 V40 H0 V30 Z" fill="#DBEAFE" stroke="#1F2937" stroke-width="2"/>
+                  <rect x="20" y="10" width="10" height="20" rx="4" fill="#93C5FD" stroke="#1F2937" stroke-width="2"/>
+                  <rect x="70" y="10" width="10" height="20" rx="4" fill="#93C5FD" stroke="#1F2937" stroke-width="2"/>
+                  <g transform="translate(25, 55) scale(0.5)">
+                     <path d="M10 50 L40 20 L60 40 L30 70 Z" fill="#BFDBFE" stroke="#1F2937" stroke-width="3" stroke-linejoin="round"/>
+                     <path d="M90 50 L60 20 L40 40 L70 70 Z" fill="#BFDBFE" stroke="#1F2937" stroke-width="3" stroke-linejoin="round"/>
+                     <path d="M30 70 Q50 90 70 70" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/>
+                  </g>
+                </g>
+                <g transform="translate(130, 120) rotate(-15)">
+                   <circle cx="0" cy="0" r="12" fill="#DBEAFE" stroke="#1F2937" stroke-width="2"/>
+                   <rect x="-4" y="12" width="8" height="25" fill="#DBEAFE" stroke="#1F2937" stroke-width="2"/>
+                   <rect x="4" y="20" width="6" height="3" fill="#1F2937"/>
+                   <rect x="4" y="28" width="6" height="3" fill="#1F2937"/>
+                </g>
+              </svg>
+          </div>
+          <svg slot="title-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 7v5l3 3" /></svg>
+        </PhaseCard>
+      </div>
+      
+      <!-- Title Section (Right of Phase 1) -->
+      <div class="w-full md:w-1/2 pt-12">
+         <p class="text-xs font-bold tracking-widest text-gray-500 uppercase mb-2">HOW IT WORKS</p>
+         <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Action-ready in 2-8 weeks</h2>
+         <p class="text-gray-600 max-w-lg">An approach built from dozens of real implementations and tested with real teams, not conference room theories.</p>
+      </div>
+    </div>
+
+    <!-- Connector 1-2 -->
+    <div class="hidden md:block absolute left-[16%] top-[350px] w-[34%] h-[100px] border-l-2 border-b-2 border-gray-800 rounded-bl-3xl -z-0"></div>
+    <div class="hidden md:block absolute left-[50%] top-[442px] w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-gray-800 border-b-[6px] border-b-transparent"></div>
+
+
+    <!-- Phase 2: Middle Right -->
+    <div class="flex justify-center md:justify-end mt-12 md:-mt-12 relative z-10">
+      <div class="w-full md:w-1/3">
+        <PhaseCard
+          phase="Phase 2"
+          title="Current State Deep Dive"
+          color="green"
+          description="We <strong>uncover how your work & data actually flow</strong> today across people, process, and tech, <strong>surfacing realities org charts don't show.</strong>"
+        >
+          <div slot="icon" class="w-full h-full flex justify-center items-center">
+             <!-- Custom SVG for Phase 2 (Charts/Analysis) -->
+             <svg viewBox="0 0 200 200" class="w-32 h-32" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(50, 50)">
+                   <rect x="0" y="0" width="100" height="80" rx="4" fill="#FFFBEB" stroke="none"/>
+                   <!-- Bar Chart -->
+                   <rect x="10" y="40" width="15" height="30" fill="#86EFAC" stroke="#1F2937" stroke-width="2"/>
+                   <rect x="35" y="20" width="15" height="50" fill="#86EFAC" stroke="#1F2937" stroke-width="2"/>
+                   <rect x="60" y="30" width="15" height="40" fill="#86EFAC" stroke="#1F2937" stroke-width="2"/>
+                   <!-- Line Graph overlay -->
+                   <path d="M10 40 L35 20 L60 30 L90 10" fill="none" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/>
+                   <!-- Magnifying Glass -->
+                   <g transform="translate(60, 50)">
+                      <circle cx="15" cy="15" r="12" fill="#DCFCE7" stroke="#1F2937" stroke-width="2"/>
+                      <line x1="24" y1="24" x2="35" y2="35" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/>
+                   </g>
+                </g>
+             </svg>
+          </div>
+          <svg slot="title-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21v-13l9 -4l9 4v13" /><path d="M13 13h4v8h-10v-6h6" /><path d="M13 21v-9a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3" /></svg>
+        </PhaseCard>
+      </div>
+    </div>
+
+    <!-- Connector 2-3 -->
+    <div class="hidden md:block absolute right-[16%] top-[650px] w-[34%] h-[100px] border-r-2 border-b-2 border-gray-800 rounded-br-3xl -z-0"></div>
+    <div class="hidden md:block absolute left-[50%] top-[742px] w-0 h-0 border-t-[6px] border-t-transparent border-r-[10px] border-r-gray-800 border-b-[6px] border-b-transparent"></div>
+
+
+    <!-- Phase 3: Middle Left -->
+    <div class="flex justify-center md:justify-start mt-12 md:mt-24 relative z-10">
+      <div class="w-full md:w-1/3">
+        <PhaseCard
+          phase="Phase 3"
+          title="Readiness & Gap Analysis"
+          color="red"
+          description="We show strengths, <strong>reveal blind spots</strong>, and <strong>score your readiness for AI, automation, and modernization</strong> so you know where you stand."
+        >
+          <div slot="icon" class="w-full h-full flex justify-center items-center">
+             <!-- Custom SVG for Phase 3 (Browser/Matrix) -->
+             <svg viewBox="0 0 200 200" class="w-32 h-32" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="60" width="120" height="80" rx="4" fill="#FFFBEB" stroke="#1F2937" stroke-width="2"/>
+                <line x1="40" y1="80" x2="160" y2="80" stroke="#1F2937" stroke-width="2"/>
+                <circle cx="50" cy="70" r="2" fill="#1F2937"/>
+                <circle cx="60" cy="70" r="2" fill="#1F2937"/>
+                <circle cx="70" cy="70" r="2" fill="#1F2937"/>
+                
+                <path d="M60 110 L80 90 L90 120 L110 100" fill="none" stroke="#1F2937" stroke-width="2"/>
+                
+                <!-- Matrix Icon -->
+                <rect x="110" y="100" width="30" height="30" fill="#FECACA" stroke="#1F2937" stroke-width="2"/>
+                <line x1="125" y1="100" x2="125" y2="130" stroke="#1F2937" stroke-width="1"/>
+                <line x1="110" y1="115" x2="140" y2="115" stroke="#1F2937" stroke-width="1"/>
+                <circle cx="118" cy="108" r="2" fill="#1F2937"/>
+                <circle cx="132" cy="122" r="2" fill="#1F2937"/>
+             </svg>
+          </div>
+          <svg slot="title-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
+        </PhaseCard>
+      </div>
+    </div>
+
+    <!-- Connector 3-4 -->
+    <div class="hidden md:block absolute left-[16%] top-[950px] w-[34%] h-[100px] border-l-2 border-b-2 border-gray-800 rounded-bl-3xl -z-0"></div>
+    <div class="hidden md:block absolute left-[50%] top-[1042px] w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-gray-800 border-b-[6px] border-b-transparent"></div>
+
+
+    <!-- Phase 4: Bottom Right -->
+    <div class="flex justify-center md:justify-end mt-12 md:mt-24 relative z-10">
+      <div class="w-full md:w-1/3">
+        <PhaseCard
+          phase="Phase 4"
+          title="Roadmap & Prioritization"
+          color="yellow"
+          description="We <strong>package up</strong> all the findings and opportunities along with <strong>clear recommendations</strong> and an <strong>actionable roadmap.</strong>"
+        >
+          <div slot="icon" class="w-full h-full flex justify-center items-center">
+             <!-- Custom SVG for Phase 4 (Checklist) -->
+             <svg viewBox="0 0 200 200" class="w-32 h-32" xmlns="http://www.w3.org/2000/svg">
+                <rect x="60" y="50" width="80" height="100" rx="8" fill="#FFFBEB" stroke="#1F2937" stroke-width="2"/>
+                <!-- Checkboxes -->
+                <rect x="70" y="70" width="12" height="12" rx="2" fill="#FEF08A" stroke="#1F2937" stroke-width="1"/>
+                <path d="M72 76 L76 80 L80 72" fill="none" stroke="#1F2937" stroke-width="2"/>
+                <line x1="90" y1="76" x2="130" y2="76" stroke="#1F2937" stroke-width="2"/>
+                <path d="M135 76 L138 73 L135 70" fill="none" stroke="#EF4444" stroke-width="2"/> <!-- Arrow -->
+
+                <rect x="70" y="95" width="12" height="12" rx="2" fill="#FEF08A" stroke="#1F2937" stroke-width="1"/>
+                <path d="M72 101 L76 105 L80 97" fill="none" stroke="#1F2937" stroke-width="2"/>
+                <line x1="90" y1="101" x2="130" y2="101" stroke="#1F2937" stroke-width="2"/>
+                <path d="M135 101 L138 98 L135 95" fill="none" stroke="#F59E0B" stroke-width="2"/>
+
+                <rect x="70" y="120" width="12" height="12" rx="2" fill="#FEF08A" stroke="#1F2937" stroke-width="1"/>
+                <line x1="90" y1="126" x2="130" y2="126" stroke="#1F2937" stroke-width="2"/>
+                <path d="M135 126 L138 123 L135 120" fill="none" stroke="#10B981" stroke-width="2"/>
+             </svg>
+          </div>
+          <svg slot="title-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 14l2 2l4 -4" /></svg>
+        </PhaseCard>
+      </div>
+    </div>
+
+  </div>
+</WidgetWrapper>

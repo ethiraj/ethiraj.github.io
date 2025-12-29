@@ -1,0 +1,60 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+
+const {
+  id,
+  isDark = false,
+  containerClass = '',
+  bg = await Astro.slots.render('bg'),
+  videoId = 'demo-video',
+  poster = '/images/dashboard-screenshot.png',
+  src = '/videos/Demo2.mp4',
+  title = 'See It in Action',
+  description = 'Watch how DatabricksIQ transforms your data governance',
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${containerClass}`} bg={bg}>
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold mb-4">{title}</h2>
+    <p class="text-xl text-gray-600 dark:text-gray-400">{description}</p>
+  </div>
+
+  <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 glass">
+    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20 -z-10"></div>
+    <video
+      id={videoId}
+      controls
+      muted
+      playsinline
+      class="w-full h-auto rounded-xl"
+      poster={poster}
+    >
+      <source src={src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('demo-video') as HTMLVideoElement;
+
+      if (video) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                video.play().catch((e) => console.log('Autoplay prevented:', e));
+              } else {
+                video.pause();
+              }
+            });
+          },
+          { threshold: 0.5 }
+        ); // Trigger when 50% visible
+
+        observer.observe(video);
+      }
+    });
+  </script>
+</WidgetWrapper>

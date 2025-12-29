@@ -1,0 +1,222 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import { Icon } from 'astro-icon/components';
+
+const { id, isDark = false, containerClass = '', bg = await Astro.slots.render('bg') } = Astro.props;
+
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${containerClass}`} bg={bg}>
+  <div class="py-12 px-4 md:px-8">
+    
+    <div class="text-center mb-16">
+      <p class="text-xs font-bold tracking-widest text-gray-500 uppercase mb-2">DELIVERABLES</p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Everything you need</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Actionable intelligence, clear recommendations, and tactical plans that actually move your people, processes, and tech forward.</p>
+    </div>
+
+    <!-- People Section -->
+    <div class="mb-16">
+      <div class="mb-6">
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">People</h3>
+        <p class="text-gray-600 text-sm">Measure skills, lower adoption risk, and understand gaps to get your team ready to adopt AI and modern tools with confidence.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- Capability Map (Large) -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow md:col-span-2 row-span-1 ">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-4 uppercase tracking-wider">PEOPLE</span>
+          <div class="mb-4">
+            <div class="w-full h-32 bg-gray-50 rounded-lg border border-gray-100 p-2 flex items-center justify-center">
+               <!-- Grid Illustration -->
+               <div class="grid grid-cols-3 gap-1">
+                  {[...Array(9)].map((_, i) => (
+                    <div class={`w-8 h-8 rounded ${i % 2 === 0 ? 'bg-yellow-100 border border-yellow-200' : 'bg-red-100 border border-red-200'}`}></div>
+                  ))}
+               </div>
+            </div>
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-2 leading-tight">Governance Council</h4>
+          <div class="text-sm text-gray-600 leading-relaxed">
+            Define <strong>owners for catalogs, schemas, and tables</strong> to ensure accountability and lineage coverage across your estate.
+          </div>
+        </div>
+      </div>
+
+      <!-- Readiness Score -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow md:col-span-1 row-span-1 ">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-4 uppercase tracking-wider">PEOPLE</span>
+          <div class="mb-4">
+             <div class="flex justify-center">
+                <!-- Gauge Illustration -->
+                <svg viewBox="0 0 100 60" class="w-24 h-16">
+                   <path d="M10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#E5E7EB" stroke-width="8" stroke-linecap="round"/>
+                   <path d="M10 50 A 40 40 0 0 1 70 20" fill="none" stroke="#FCD34D" stroke-width="8" stroke-linecap="round"/>
+                   <text x="50" y="45" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">70%</text>
+                </svg>
+             </div>
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-2 leading-tight">Governed AI Score</h4>
+          <div class="text-sm text-gray-600 leading-relaxed">
+            Composite <strong>0-100 readiness score</strong> across 6 pillars including security, metadata, and MLOps.
+          </div>
+        </div>
+      </div>
+
+      <!-- Training Plan -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow md:col-span-1 row-span-1 ">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-4 uppercase tracking-wider">PEOPLE</span>
+          <div class="mb-4 text-blue-600"><Icon name="tabler:book" class="w-8 h-8" /></div>
+          <h4 class="text-lg font-bold text-gray-900 mb-2 leading-tight">Adoption Strategy</h4>
+          <div class="text-sm text-gray-600 leading-relaxed">
+            Driving usage of <strong>governed data assets</strong> across the organization.
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+
+
+    <!-- Process Section -->
+    <div class="mb-16">
+       <div class="mb-6">
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Process</h3>
+        <p class="text-gray-600 text-sm">See how work really runs, uncover where improvements matter most, and leave with a roadmap that turns ideas into action.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Sequenced Roadmap -->
+          <div class="md:col-span-2 bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-800 text-xs font-semibold mb-4 uppercase tracking-wider">PROCESS</span>
+             <div class="h-32 mb-4 flex items-center justify-center">
+                 <!-- Timeline SVG -->
+                 <svg viewBox="0 0 300 100" class="w-full h-full">
+                    <line x1="20" y1="50" x2="280" y2="50" stroke="#E5E7EB" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="6" fill="#93C5FD"/>
+                    <text x="50" y="70" text-anchor="middle" font-size="10" fill="#6B7280">30</text>
+                    <circle cx="150" cy="50" r="6" fill="#93C5FD"/>
+                    <text x="150" y="70" text-anchor="middle" font-size="10" fill="#6B7280">60</text>
+                    <circle cx="250" cy="50" r="6" fill="#93C5FD"/>
+                    <text x="250" y="70" text-anchor="middle" font-size="10" fill="#6B7280">90</text>
+                    <!-- Flags -->
+                    <path d="M50 50 L50 20 L70 25 L50 30" fill="#BFDBFE" stroke="#1F2937" stroke-width="1"/>
+                    <path d="M150 50 L150 20 L170 25 L150 30" fill="#BFDBFE" stroke="#1F2937" stroke-width="1"/>
+                    <path d="M250 50 L250 20 L270 25 L250 30" fill="#BFDBFE" stroke="#1F2937" stroke-width="1"/>
+                 </svg>
+             </div>
+             <h4 class="text-xl font-bold text-gray-900 mb-2">Governance Roadmap</h4>
+             <p class="text-gray-600 text-sm">Phased implementation of <strong>Unity Catalog</strong> balancing quick wins with long-term <strong>data mesh</strong> transformation.</p>
+          </div>
+
+          <!-- ROI Model -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-800 text-xs font-semibold mb-4 uppercase tracking-wider">PROCESS</span>
+             <div class="mb-4 text-yellow-500"><Icon name="tabler:coin" class="w-10 h-10" /></div>
+             <h4 class="text-lg font-bold text-gray-900 mb-2">FinOps Framework</h4>
+             <p class="text-gray-600 text-xs">Cluster policies, auto-termination, and cost tagging.</p>
+          </div>
+
+          <!-- Opportunity Rank -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-800 text-xs font-semibold mb-4 uppercase tracking-wider">PROCESS</span>
+             <div class="mb-4 text-blue-500"><Icon name="tabler:chart-arrows-vertical" class="w-10 h-10" /></div>
+             <h4 class="text-lg font-bold text-gray-900 mb-2">Use Case Priority</h4>
+             <p class="text-gray-600 text-xs">Impact vs. effort ranking for <strong>GenAI & Analytics</strong>.</p>
+          </div>
+          
+          <!-- Maturity Score -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-800 text-xs font-semibold mb-4 uppercase tracking-wider">PROCESS</span>
+             <h4 class="text-sm font-bold text-gray-900 mb-1">Compliance Check</h4>
+             <p class="text-gray-500 text-[10px]">RBAC, credentials, and network security audit.</p>
+          </div>
+
+          <!-- Gap Analysis -->
+          <div class="md:col-span-2 bg-white rounded-xl border border-gray-200 p-6 shadow-sm flex items-center gap-4">
+             <div class="p-3 bg-blue-50 rounded-lg text-blue-600">
+                <Icon name="tabler:file-search" class="w-8 h-8" />
+             </div>
+             <div>
+                 <h4 class="text-lg font-bold text-gray-900">Policy Gap Analysis</h4>
+                 <p class="text-gray-600 text-xs">Scan for missing tags, owners, and descriptions.</p>
+             </div>
+          </div>
+
+          <!-- Workflow Maps -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-800 text-xs font-semibold mb-4 uppercase tracking-wider">PROCESS</span>
+             <div class="mb-4 flex gap-2">
+                <Icon name="tabler:settings" class="w-6 h-6 text-blue-500" />
+                <Icon name="tabler:arrow-right" class="w-6 h-6 text-gray-400" />
+                <Icon name="tabler:check" class="w-6 h-6 text-green-500" />
+             </div>
+             <h4 class="text-lg font-bold text-gray-900 mb-2">MLOps Lifecycle</h4>
+             <p class="text-gray-600 text-xs">Standardized model serving, tracking, and registry.</p>
+          </div>
+      </div>
+    </div>
+
+
+    <!-- Technology Section -->
+    <div class="mb-16">
+       <div class="mb-6">
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Technology</h3>
+        <p class="text-gray-600 text-sm">Understand your systems, clean up your data, and ensure you have the right tools that are working together.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Tool Recommendations -->
+          <div class="md:col-span-2 bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold mb-4 uppercase tracking-wider">TECHNOLOGY</span>
+             <div class="h-32 mb-4 flex items-center justify-center">
+                 <!-- Pipeline SVG -->
+                 <svg viewBox="0 0 300 100" class="w-full h-full">
+                    <line x1="20" y1="50" x2="280" y2="50" stroke="#E5E7EB" stroke-width="4"/>
+                    <circle cx="50" cy="50" r="15" fill="white" stroke="#3B82F6" stroke-width="2"/>
+                    <circle cx="150" cy="50" r="15" fill="white" stroke="#F59E0B" stroke-width="2"/>
+                    <circle cx="250" cy="50" r="15" fill="white" stroke="#10B981" stroke-width="2"/>
+                    <path d="M20 80 Q150 20 280 80" fill="none" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="4 4"/>
+                 </svg>
+             </div>
+             <h4 class="text-xl font-bold text-gray-900 mb-2">Unity Catalog Setup</h4>
+             <p class="text-gray-600 text-sm">Recommendations for <strong>centralized metadata, lineage, and discovery</strong>—ensuring your data lakehouse runs efficiently.</p>
+          </div>
+
+          <!-- Systems Inventory -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold mb-4 uppercase tracking-wider">TECHNOLOGY</span>
+             <div class="mb-4 grid grid-cols-2 gap-2">
+                <div class="w-6 h-6 bg-gray-100 rounded"></div><div class="w-6 h-6 bg-blue-100 rounded"></div>
+                <div class="w-6 h-6 bg-green-100 rounded"></div><div class="w-6 h-6 bg-yellow-100 rounded"></div>
+             </div>
+             <h4 class="text-sm font-bold text-gray-900 mb-1">Architecture Review</h4>
+             <p class="text-gray-500 text-[10px]">Bronze/Silver/Gold layer design and pipeline structure.</p>
+          </div>
+
+          <!-- Integration Readiness -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+             <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold mb-4 uppercase tracking-wider">TECHNOLOGY</span>
+             <div class="mb-4 text-green-600"><Icon name="tabler:database" class="w-8 h-8" /></div>
+             <h4 class="text-sm font-bold text-gray-900 mb-1">Pipeline Orchestration</h4>
+             <p class="text-gray-500 text-[10px]">Delta Live Tables (DLT) and Jobs scheduling.</p>
+          </div>
+
+          <!-- Data Assessment -->
+          <div class="md:col-span-2 bg-white rounded-xl border border-gray-200 p-6 shadow-sm flex items-center gap-6">
+             <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                <Icon name="tabler:briefcase" class="w-12 h-12 text-blue-600" />
+             </div>
+             <div>
+                <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold mb-2 uppercase tracking-wider">TECHNOLOGY</span>
+                <h4 class="text-xl font-bold text-gray-900 mb-2">Data Quality Audit</h4>
+                <p class="text-gray-600 text-sm">Checks for nulls, schema enforcement, and validity expectations.</p>
+             </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</WidgetWrapper>

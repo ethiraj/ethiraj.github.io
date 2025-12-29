@@ -1,0 +1,387 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FocusAreas from '~/components/widgets/FocusAreas.astro';
+import { Icon } from 'astro-icon/components';
+import ConsultationForm from '~/components/widgets/ConsultationForm';
+
+const metadata = {
+  title: 'Ethiraj Krishnamanaidu - Data & AI Consulting for Transformative Growth',
+};
+---
+<Layout metadata={metadata}>
+  {/* Header with minimal height */}
+  <Fragment slot="header">
+    <Header
+      classes={{ 
+        container: 'max-w-7xl mx-auto px-4 h-14', // Smaller height
+        outer: 'py-1.5', // Reduced padding
+        link: 'text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600',
+        button: 'text-xs bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-1.5 rounded-full'
+      }}
+      links={[
+        { text: 'Home', href: '#home' },
+        { text: 'About', href: '#about' },
+        { text: 'Services', href: '#services' },
+        { text: 'Projects', href: '#projects' },
+        { text: 'DatabricksIQ', href: '/databricks-iq' },
+        { text: 'Blog', href: '#blog' },
+        { text: 'Contact', href: '#contact' },
+      ]}
+       isSticky
+      />
+  </Fragment>
+  <section id="home" class="relative flex flex-col items-center mt-1 pt-16 sm:pt-20">
+  
+  {/* Animated Background */}
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900/20 opacity-60"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-400/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-blob"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+  </div>
+
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-xs font-medium tracking-wide text-blue-600 mb-2 uppercase fade-up">
+      HELPING COMPANIES TURN DATA INTO A COMPETITIVE ADVANTAGE WITH 20+ YEARS OF EXPERIENCE.
+    </p>
+    
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white mb-3 max-w-4xl mx-auto fade-up">
+      Data & AI Solutions for the Modern Enterprise
+    </h1>
+    
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-2 max-w-2xl mx-auto leading-relaxed fade-up">
+      Transform your data strategy with expertise in building cloud-native data platforms 
+      and AI-driven solutions. From custom LLM integrations to enterprise-scale 
+      architectures, I work with you to create measurable impact and drive innovation.
+    </p>
+    
+    <div class="flex justify-center mb-8 fade-up">
+      <a 
+        href="mailto:ethiraj.k@dataadvisors.ai" 
+        class="inline-flex items-center justify-center px-4 py-2 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-full transition duration-300 group"
+      >
+        Get Started
+        <Icon 
+          name="tabler:arrow-right" 
+          class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+        />
+      </a>
+    </div>
+  </div>
+<section id="about" class="relative py-12 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <Content
+        isReversed={false}
+        columns={3}
+        items={[
+            {
+                icon: 'tabler:brand-linkedin',
+                callToAction: {
+                    target: '_blank',
+                    text: 'LinkedIn',
+                    href: 'https://www.linkedin.com/in/ethiraj-krishnamanaidu/',
+                    class: 'inline-flex items-center justify-center text-blue-600 dark:text-blue-400 hover:underline'
+                },
+            },
+            {
+                icon: 'tabler:brand-github',
+                callToAction: {
+                    target: '_blank',
+                    text: 'GitHub',
+                    href: 'https://github.com/ethiraj',
+                },
+            },
+            {
+                icon: 'tabler:mail',
+                callToAction: {
+                    text: 'Email',
+                    target: '_blank',
+                    href: 'mailto:ethiraj.k@dataadvisors.ai',
+                },
+            },
+        ]}
+        classes={{
+            container: 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[Open+Sans]',
+            title: 'text-4xl font-bold tracking-tight mb-8',
+            items: 'gap-8',
+            item: 'bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105'
+        }}
+        image={{
+            src: '~/assets/images/Ethiraj_Standing.JPG',
+            alt: 'Ethiraj Krishnamanaidu',
+            loading: 'eager',
+            width: 400,
+            height: 500,
+            fit: 'cover',
+            objectPosition: 'top',
+            class: 'object-top max-w-sm bg-transparent',  // Added bg-transparent
+            sizes: "(max-width: 768px) 100vw, 30vw"
+        }}
+    >
+        <Fragment slot="content">
+            <div class="space-y-6 py-6">
+                <div class="text-center sm:text-left">
+                    <!-- Name with new font style -->
+                    <h2 class="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 mb-1 font-[Playfair+Display]">
+                        Ethiraj Krishnamanaidu
+                    </h2>
+
+                    <!-- Thinner decorative line with added spacing below -->
+                    <div class="h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 w-20 mb-2 mx-auto sm:mx-0"></div>
+
+                    <!-- Smaller title with Playfair Display font style -->
+                    <h5 class="text-base font-semibold text-gray-600 dark:text-gray-400 tracking-wide uppercase font-[Playfair+Display]">
+                        Data & AI Architect and Strategic Advisor
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Description with Open Sans font for readability -->
+            <div class="space-y-6 text-gray-700 dark:text-gray-300 font-[Open+Sans]">
+                <p class="text-sm sm:text-base">
+                    I am passionate about the opportunities created by modern data platforms and AI/ML. Leveraging over two decades of experience, including transformative work with MSCI, SLB/OSDU, and UnitedHealthcare, I help organizations design and implement scalable, resilient data platforms and intelligent systems that drive innovation, growth, and efficiency.
+                </p>
+                <p class="text-sm sm:text-base">
+                    With deep expertise in cloud-native architecture, AI-driven solutions, and data engineering, I focus on aligning data strategies with business goals, fostering innovation through AI/ML solutions, and transforming data practices to support seamless scalability and robust data governance.
+                </p>
+            </div>
+        </Fragment>
+    </Content>
+
+    <!-- Optional subtle background shape for embedded look -->
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-100 to-transparent dark:from-gray-800 opacity-50 rounded-2xl" style="z-index: 0;"></div>
+</section>
+
+{/* Key Focus Areas Section */}
+<section class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Header */}
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+        Key Focus Areas
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        Specialized expertise to drive data and AI transformation across your organization
+      </p>
+    </div>
+    
+    {/* Focus Areas Grid */}
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Data Architecture & Engineering',
+          description: 'Designing scalable, cloud-native data platforms utilizing Lakehouse and Data Mesh architectures. Build robust data pipelines and implement modern data engineering practices.',
+          icon: 'tabler:database',
+          color: 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400',
+          borderColor: 'border-blue-100 dark:border-blue-800'
+        },
+        {
+          title: 'AI & Machine Learning',
+          description: 'Implementing advanced AI and ML solutions, including custom LLMs and intelligent automation. Create end-to-end ML pipelines and deploy models that deliver real business value.',
+          icon: 'tabler:brain',
+          color: 'bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400',
+          borderColor: 'border-purple-100 dark:border-purple-800'
+        },
+        {
+          title: 'Data Governance & Compliance',
+          description: 'Establishing robust data governance frameworks to ensure compliance, data quality, and security. Implement data catalogs, metadata management, and data quality monitoring.',
+          icon: 'tabler:shield',
+          color: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400',
+          borderColor: 'border-emerald-100 dark:border-emerald-800'
+        }
+      ].map((area, index) => (
+        <div 
+          class="group relative flex flex-col bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out"
+        >
+          {/* Icon Container */}
+          <div class={`flex items-center justify-center w-14 h-14 rounded-xl mb-6 ${area.color} border ${area.borderColor}`}>
+            <Icon name={area.icon} class="w-6 h-6 transition-transform group-hover:scale-110" />
+          </div>
+          
+          {/* Content */}
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            {area.title}
+          </h3>
+          
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            {area.description}
+          </p>
+          
+          {/* Hover Effect Gradient */}
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent to-blue-50/50 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+  {/* Project Highlights Section */}
+  <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <Content
+      title="Project Highlights"
+      subtitle="Case studies showcasing real business impact"
+      isReversed
+     items={[
+    {
+      title: 'NextGen Data Platform for a Leading Financial Services Firm',
+      description: 'Collaborated with senior management to define and implement a comprehensive and data strategy, driving innovation and adoption of advanced technologies. Architected a NextGen Data Platform leveraging Lakehouse and Data Mesh architectures, optimizing scalability, security, and performance for the organization’s data needs.',
+    },
+    {
+      title: 'Open Data Platform for Energy Industry',
+      description: 'Led the development of a reference architecture for an open data ecosystem in collaboration with energy industry leaders. This platform has revolutionized data accessibility and collaboration, setting a new standard for multi-cloud ecosystems in the sector.',
+    },
+    {
+      title: 'AI-Driven Data Collection & Analysis',
+      description: 'Enhanced data collection and risk analysis through AI-driven solutions, increasing accuracy and operational efficiency. This AI integration empowered data-driven insights, setting a new standard for data intelligence and strategic decision-making.',
+    },
+    {
+      title: 'Multi-Cloud Data Engineering for a Global Energy Company',
+      description: 'Designed and implemented a multi-cloud CI/CD pipeline and Service Provider Interfaces (SPIs), improving operational efficiency across global teams and multiple cloud providers in a large-scale energy company.',
+    },
+  ]}
+      image={{
+        src: '~/assets/images/data_ai.png',
+        alt: 'Project Highlights',
+      }}
+      classes={{
+        container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
+        title: 'text-4xl font-bold tracking-tight mb-8',
+        subtitle: 'text-xl text-gray-600 dark:text-gray-400 mb-16'
+      }}
+    />
+  </section>
+
+ {/* Add this section after the Focus Areas section */}
+<Features3
+  id="services"
+  title="Consulting Services"
+  subtitle="Expert solutions to elevate your data strategy and drive digital transformation"
+  columns={3}
+  isBeforeContent={true}
+  items={[
+    {
+      title: 'Data Platform Strategy & Architecture',
+      description: `Design and implementation of modern data platforms using cloud-native architectures. Specializing in Lakehouse architecture, Data Mesh patterns, and scalable data solutions that drive business value.`,
+      icon: 'tabler:database',
+    },
+    {
+      title: 'AI & Machine Learning Solutions',
+      description: `End-to-end ML/AI implementation from strategy to production. Custom LLM development, MLOps automation, and intelligent systems that transform business processes.`,
+      icon: 'tabler:brain',
+    },
+    {
+      title: 'Data Governance & Quality',
+      description: `Establish robust data governance frameworks, implement data quality monitoring, and ensure compliance with industry regulations while maintaining data security.`,
+      icon: 'tabler:shield-lock',
+    },
+    {
+      title: 'Cloud Migration & Optimization',
+      description: `Strategic cloud migration planning and execution. Optimize cloud-native architectures for cost, performance, and scalability across multiple cloud providers.`,
+      icon: 'tabler:cloud-computing',
+    },
+    {
+      title: 'Data Analytics & Visualization',
+      description: `Transform raw data into actionable insights through advanced analytics and intuitive visualizations. Create automated reporting and real-time dashboards.`,
+      icon: 'tabler:chart-dots',
+    },
+    {
+      title: 'Enterprise Architecture',
+      description: `Align technology initiatives with business objectives through comprehensive enterprise architecture planning and implementation strategies.`,
+      icon: 'tabler:building-skyscraper',
+    },
+  ]}
+  classes={{
+    container: 'max-w-7xl mx-auto',
+    title: 'text-3xl font-bold tracking-tight sm:text-4xl mb-4',
+    subtitle: 'max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400 mb-12',
+    items: 'gap-8',
+    item: 'bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+  }}
+/>
+
+ {/* Call to Action Section */}
+  <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <CallToAction
+      title="Ready to Transform Your Data and AI Capabilities?"
+      subtitle="Let's explore how we can unlock your data's potential."
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Contact Me',
+          href: 'mailto:ethiraj.k@dataadvisors.ai',
+          class: 'min-w-[200px]'
+        },
+      ]}
+      classes={{
+        container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
+        title: 'text-4xl font-bold tracking-tight mb-4',
+        subtitle: 'text-xl text-gray-600 dark:text-gray-400 mb-8'
+      }}
+    />
+  </section>
+  {/* Blog Section */}
+  <section id="blog" class="py-20 bg-white dark:bg-gray-900">
+    <BlogLatestPosts
+      title="Insights & Thought Leadership"
+      information="Explore articles on data architecture, AI, and strategies for digital transformation."
+      classes={{
+        container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
+        title: 'text-4xl font-bold tracking-tight mb-8',
+        information: 'text-xl text-gray-600 dark:text-gray-400 mb-16'
+      }}
+    />
+  </section>
+</Layout>
+
+<style>
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
+  }
+
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Base typography */
+  :root {
+    --font-size-base: 14px;
+    --line-height-base: 1.5;
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      --font-size-base: 15px;
+    }
+  }
+
+  body {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+</style>
+
+<script>
+  // Intersection Observer for fade-up animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '50px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+</script>

@@ -8,7 +8,7 @@ export const headerData = {
     },
     {
       text: 'About',
-      href: getPermalink('/#about'),
+      href: getPermalink('/about'),
     },
     {
       text: 'Services',
@@ -19,32 +19,15 @@ export const headerData = {
       href: getPermalink('/#projects'),
     },
     {
-      text: 'DatabricksIQ',
+      text: 'Data & AI Readiness',
       href: getPermalink('/databricks-iq'),
     },
     {
       text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },
-    {
-      text: 'Contact',
-      href: getPermalink('/#contact'),
+      href: getPermalink('/#blog'),
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: 'Get Started', href: getPermalink('/#contact') }],
 };
 
 export const footerData = {
@@ -84,7 +67,7 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
+        { text: 'About', href: getPermalink('/about') },
         { text: 'Blog', href: '#' },
         { text: 'Careers', href: '#' },
         { text: 'Press', href: '#' },

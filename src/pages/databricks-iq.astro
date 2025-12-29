@@ -1,46 +1,108 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
 import { Icon } from 'astro-icon/components';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'DatabricksIQ - Intelligent Data Governance',
+  title: 'DatabricksIQ - AI Governance Made Clear',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section ******************* -->
-  <section class="relative overflow-hidden">
-    <!-- Background Glow -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-500/20 dark:bg-blue-500/10 blur-[100px] rounded-full -z-10"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
-      <p class="text-base text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase mb-4">DatabricksIQ</p>
-      <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-        <span class="text-gradient">Intelligent Data Solutions</span>
-      </h1>
-      <p class="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-400 mb-10">
-        Unlock the power of your data with our comprehensive governance, cost optimization, and AI readiness framework.
-      </p>
-      <div class="flex justify-center gap-4">
-        <a href="#offers" class="btn-primary">Get Started</a>
-        <a href="#framework" class="btn-tertiary">Learn More</a>
-      </div>
-      
 
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-20 sm:pt-32 sm:pb-28 overflow-hidden">
+    <!-- Modern gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800"></div>
+    
+    <!-- Geometric accent -->
+    <div class="absolute top-0 right-0 w-1/3 h-full opacity-10">
+      <svg viewBox="0 0 200 200" class="w-full h-full">
+        <defs>
+          <linearGradient id="databricks-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#F97316;stop-opacity:0.3" />
+            <stop offset="100%" style="stop-color:#0F172A;stop-opacity:0.1" />
+          </linearGradient>
+        </defs>
+        <path d="M0,0 L200,0 L200,200 L0,200 Z" fill="url(#databricks-gradient)" opacity="0.1"/>
+        <line x1="0" y1="50" x2="200" y2="50" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="0" y1="100" x2="200" y2="100" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="0" y1="150" x2="200" y2="150" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="50" y1="0" x2="50" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="100" y1="0" x2="100" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="150" y1="0" x2="150" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Trust Badge -->
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 rounded-full mb-8 border border-orange-200/50 dark:border-orange-800/30 backdrop-blur-sm">
+          <Icon name="tabler:database" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
+          <span class="text-sm font-semibold text-slate-800 dark:text-slate-200">Data & AI Readiness Assessment</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+          Everyone's asking about your <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">AI governance plan</span>
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+          We built a better way to figure it out. Get action-ready governance across your Databricks environment in 2-8 weeks with clear deliverables and measurable results.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <a 
+            href="#contact" 
+            class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-0.5 min-w-[240px]"
+          >
+            Get Your Readiness Score
+            <Icon name="tabler:arrow-right" class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a 
+            href="#demo" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md min-w-[240px]"
+          >
+            <Icon name="tabler:player-play" class="w-5 h-5 mr-2" />
+            Watch Demo
+          </a>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto pt-8 border-t border-slate-200 dark:border-slate-700">
+          <div class="text-center">
+            <div class="text-xl font-bold text-orange-600 dark:text-orange-400">2-8</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400 mt-1">Weeks to Action</div>
+          </div>
+          <div class="text-center">
+            <div class="text-xl font-bold text-orange-600 dark:text-orange-400">6</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400 mt-1">Governance Pillars</div>
+          </div>
+          <div class="text-center">
+            <div class="text-xl font-bold text-orange-600 dark:text-orange-400">0-100</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400 mt-1">Readiness Score</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Product Demo Section ******************* -->
-  <section class="py-12 bg-gray-50 dark:bg-gray-900/50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold mb-4">See It in Action</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-400">Watch how DatabricksIQ transforms your data governance</p>
+  <!-- Video Demo Section -->
+  <section id="demo" class="py-20 bg-white dark:bg-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+          See It in Action
+        </h2>
+        <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          Watch how our assessment transforms your data governance and AI readiness
+        </p>
       </div>
       
-      <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 glass">
-        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20 -z-10"></div>
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700">
+        <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-blue-600 rounded-2xl blur opacity-20 -z-10"></div>
         <video 
           id="demo-video"
           controls 
@@ -56,185 +118,314 @@ const metadata = {
     </div>
   </section>
 
-
-
-  <!-- Governance Framework ******************* -->
-  <section id="framework" class="py-20 relative">
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-20 bg-slate-50 dark:bg-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Governance Intelligence Framework</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-400">The 6 Pillars of a Governed Lakehouse</p>
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-6">
+          Action-Ready in 2-8 Weeks
+        </h2>
+        <p class="text-base text-slate-600 dark:text-slate-300">
+          A proven approach built from real Databricks implementations, not conference room theories
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            title: '1. Governance & Metadata',
-            desc: 'Catalogs, tables, ownership, lineage.',
-            metrics: '% tables with owners, lineage coverage',
-            icon: 'tabler:database',
-            color: 'text-blue-500'
-          },
-          {
-            title: '2. Compute & Policy Control',
-            desc: 'Cluster and policy hygiene.',
-            metrics: '% clusters with policy, auto-termination',
-            icon: 'tabler:server',
-            color: 'text-green-500'
-          },
-          {
-            title: '3. Automation & Workflow',
-            desc: 'Jobs, pipelines, scheduling.',
-            metrics: '% jobs scheduled, # DLT pipelines',
-            icon: 'tabler:automation',
-            color: 'text-purple-500'
-          },
-          {
-            title: '4. MLOps & Model Lifecycle',
-            desc: 'Models, experiments, serving.',
-            metrics: '% models in prod, retrain automation',
-            icon: 'tabler:chart-dots',
-            color: 'text-pink-500'
-          },
-          {
-            title: '5. Security & Access Control',
-            desc: 'Groups, secrets, credentials.',
-            metrics: '# orphaned credentials, RBAC compliance',
-            icon: 'tabler:lock',
-            color: 'text-red-500'
-          },
-          {
-            title: '6. Data Architecture & Modeling',
-            desc: 'Pipeline design and layer structure.',
-            metrics: '% bronze/silver/gold coverage',
-            icon: 'tabler:layout-grid',
-            color: 'text-orange-500'
-          }
-        ].map(item => (
-          <div class="glass glass-hover p-6 rounded-2xl border-t-4 border-transparent hover:border-blue-500 transition-all">
-            <div class={`mb-4 ${item.color}`}>
-              <Icon name={item.icon} class="w-10 h-10" />
-            </div>
-            <h3 class="text-xl font-bold mb-2">{item.title}</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">{item.desc}</p>
-            <div class="text-sm bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
-              <span class="font-semibold">Metrics:</span> {item.metrics}
-            </div>
-          </div>
-        ))}
+
+  <!-- How It Works Section - Modern Zigzag Flow -->
+  <section id="how-it-works" class="py-24 bg-slate-50 dark:bg-slate-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <!-- Connectors Layer (Desktop Only) -->
+      <div class="absolute inset-0 hidden md:block pointer-events-none z-0">
+        <!-- Connector 1->2 -->
+        <svg class="absolute text-slate-300 dark:text-slate-600" style="top: 18rem; left: 22%; width: 56%; height: 8rem;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 5 0 V 50 Q 5 100 55 100 H 95" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+          <path d="M 95 95 L 100 100 L 95 105" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <!-- Connector 2->3 -->
+        <svg class="absolute text-slate-300 dark:text-slate-600" style="top: 38rem; left: 22%; width: 56%; height: 8rem;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 95 0 V 50 Q 95 100 45 100 H 5" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+          <path d="M 5 95 L 0 100 L 5 105" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <!-- Connector 3->4 -->
+        <svg class="absolute text-slate-300 dark:text-slate-600" style="top: 58rem; left: 22%; width: 56%; height: 8rem;" viewBox="0 0 100 100" preserveAspectRatio="none">
+           <path d="M 5 0 V 50 Q 5 100 55 100 H 95" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+          <path d="M 95 95 L 100 100 L 95 105" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+        </svg>
       </div>
+
+      <!-- Phase 1 Row -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16 md:mb-32 relative z-10">
+        <!-- Card -->
+        <div class="relative">
+           <div class="absolute -top-5 -left-5 bg-blue-600 text-white font-bold text-sm px-6 py-2 rounded-full shadow-lg z-20">
+              Phase 1
+            </div>
+          <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-100 dark:border-slate-700 relative hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-20 h-20 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+              <Icon name="tabler:calendar-event" class="w-10 h-10 text-blue-600" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">Kickoff & Alignment</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-center text-sm leading-relaxed">
+              We align on priorities, outcomes, and success criteria. Everything that follows is <span class="font-semibold text-slate-900 dark:text-white">built around your goals</span>.
+            </p>
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="text-left md:pl-10">
+          <span class="text-orange-600 font-bold tracking-wider uppercase text-sm">How It Works</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-2 mb-6 leading-tight">
+            Action-ready in <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">2-8 weeks</span>
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300 max-w-lg">
+            A proven approach built from dozens of real implementations and tested with real teams, not conference room theories.
+          </p>
+        </div>
+      </div>
+
+      <!-- Phase 2 Row -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16 md:mb-32 relative z-10">
+        <div class="hidden md:block"></div> <!-- Spacer -->
+        <!-- Card -->
+        <div class="relative">
+           <div class="absolute -top-5 -left-5 bg-emerald-600 text-white font-bold text-sm px-6 py-2 rounded-full shadow-lg z-20">
+              Phase 2
+            </div>
+          <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-100 dark:border-slate-700 relative hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+              <Icon name="tabler:chart-bar" class="w-10 h-10 text-emerald-600" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">Current State Deep Dive</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-center text-sm leading-relaxed">
+              We uncover how your work & data actually flow across people, process, and tech, <span class="font-semibold text-slate-900 dark:text-white">surfacing realities org charts don't show</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 Row -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16 md:mb-32 relative z-10">
+        <!-- Card -->
+        <div class="relative">
+           <div class="absolute -top-5 -left-5 bg-orange-600 text-white font-bold text-sm px-6 py-2 rounded-full shadow-lg z-20">
+              Phase 3
+            </div>
+          <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-100 dark:border-slate-700 relative hover:-translate-y-1 transition-transform duration-300">
+             <div class="w-20 h-20 bg-orange-50 dark:bg-orange-900/20 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+              <Icon name="tabler:target" class="w-10 h-10 text-orange-600" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">Readiness & Gap Analysis</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-center text-sm leading-relaxed">
+               We show strengths, <span class="font-semibold text-slate-900 dark:text-white">reveal blind spots</span>, and score your readiness so you know exactly where you stand.
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:block"></div> <!-- Spacer -->
+      </div>
+      
+      <!-- Phase 4 Row -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16 relative z-10">
+        <div class="hidden md:block"></div> <!-- Spacer -->
+        <!-- Card -->
+        <div class="relative">
+           <div class="absolute -top-5 -left-5 bg-purple-600 text-white font-bold text-sm px-6 py-2 rounded-full shadow-lg z-20">
+              Phase 4
+            </div>
+          <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-100 dark:border-slate-700 relative hover:-translate-y-1 transition-transform duration-300">
+             <div class="w-20 h-20 bg-purple-50 dark:bg-purple-900/20 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+              <Icon name="tabler:file-check" class="w-10 h-10 text-purple-600" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">Roadmap & Prioritization</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-center text-sm leading-relaxed">
+              We package up findings with <span class="font-semibold text-slate-900 dark:text-white">clear recommendations and an actionable roadmap</span> to move forward.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+       <!-- Why This Approach Works (Full Width) -->
+      <div class="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-slate-800 dark:to-slate-800/50 rounded-3xl p-10 border border-indigo-100 dark:border-slate-700 mt-20">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-8 text-center">Why This Approach Works</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="w-14 h-14 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm text-indigo-600 dark:text-indigo-400">
+              <Icon name="tabler:robot" class="w-7 h-7" />
+            </div>
+            <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Automated</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Machine-checkable metrics</p>
+          </div>
+          <div class="text-center">
+             <div class="w-14 h-14 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm text-emerald-600 dark:text-emerald-400">
+              <Icon name="tabler:list-check" class="w-7 h-7" />
+            </div>
+            <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Actionable</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Ranked remediation tasks</p>
+          </div>
+          <div class="text-center">
+             <div class="w-14 h-14 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm text-orange-600 dark:text-orange-400">
+              <Icon name="tabler:scoreboard" class="w-7 h-7" />
+            </div>
+            <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Measurable</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Composite 0-100 score</p>
+          </div>
+          <div class="text-center">
+             <div class="w-14 h-14 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm text-blue-600 dark:text-blue-400">
+              <Icon name="tabler:trending-up" class="w-7 h-7" />
+            </div>
+            <h4 class="font-semibold text-slate-900 dark:text-white mb-1">Trackable</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Monitor improvement</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Deep Dive Table ******************* -->
-  <section class="py-20 bg-gray-50 dark:bg-gray-900/50">
+
+  <!-- Deliverables Section -->
+  <section id="deliverables" class="py-20 bg-white dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold mb-4">Deep Dive: Data Architecture & Modeling</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-400">Ensuring a robust and scalable data foundation</p>
+      <div class="text-center mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+          Everything You Need
+        </h2>
+        <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          Actionable intelligence, clear recommendations, and tactical plans across governance, compute, and security
+        </p>
       </div>
 
-      <div class="glass rounded-2xl overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="bg-gray-100/50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
-                <th class="p-6 font-semibold">Dimension</th>
-                <th class="p-6 font-semibold">Measurable Signal</th>
-                <th class="p-6 font-semibold hidden md:table-cell">Example Evaluation</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-              {[
-                ['Layer Design', 'Table naming convention or UC schema mapping', '≥ 90 % of tables properly layered'],
-                ['Pipeline Traceability', 'Presence of lineage edges in UC or DLT', '≥ 80 % lineage completeness'],
-                ['Schema Standardization', 'Similarity between schema patterns', '≤ 10 % inconsistent fields'],
-                ['Dimensional Modeling', 'Detect surrogate keys, star/snowflake joins', '≥ 70 % gold tables conform'],
-                ['Performance Optimization', 'Delta file count, partitioning', 'Small-file ratio < 5 %'],
-                ['Data Quality & Validation', 'DLT expectations, null ratio', '≥ 80 % tables with checks defined']
-              ].map(([dim, signal, eval_]) => (
-                <tr class="hover:bg-white/50 dark:hover:bg-gray-800/50 transition-colors">
-                  <td class="p-6 font-medium text-blue-600 dark:text-blue-400">{dim}</td>
-                  <td class="p-6">{signal}</td>
-                  <td class="p-6 hidden md:table-cell text-gray-500">{eval_}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <div class="space-y-12">
+        <!-- Governance & Metadata -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-900/10 rounded-xl flex items-center justify-center">
+              <Icon name="tabler:database" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Governance & Metadata</h3>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Catalog Inventory</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Complete map of catalogs, schemas, and tables</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Ownership Mapping</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Clear ownership and accountability structure</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Lineage Coverage</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Data flow tracking and dependency mapping</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Quality Score</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Metadata completeness and accuracy metrics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compute & Cost -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 dark:from-orange-900/30 dark:to-orange-900/10 rounded-xl flex items-center justify-center">
+              <Icon name="tabler:server" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Compute & Cost</h3>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Policy Audit</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Cluster policy compliance and gaps</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Cost Analysis</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Identify top cost drivers and waste</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">FinOps Plan</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Quick wins and optimization roadmap</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Auto-Termination</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Setup and enforcement recommendations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security & Compliance -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-900/10 rounded-xl flex items-center justify-center">
+              <Icon name="tabler:shield-lock" class="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Security & Compliance</h3>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">RBAC Audit</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Role-based access control review</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Credential Hygiene</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Orphaned credentials and secret management</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">PII Detection</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Identify and classify sensitive data</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Compliance Score</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Regulatory compliance assessment</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Offers Grid ******************* -->
-  <section id="offers" class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Offers</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-400">Tailored engagements to accelerate your data journey</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { title: 'Data Governance Quickstart', icon: 'tabler:number-1', desc: '1-week assessment to scan Unity Catalog for policy gaps.' },
-          { title: 'Lineage & Quality Diagnostic', icon: 'tabler:number-2', desc: 'Instrument pipelines with lineage tracking and quality alerts.' },
-          { title: 'FinOps Accelerator', icon: 'tabler:number-3', desc: 'Identify cost drivers and implement quick wins.' },
-          { title: 'Model Governance Boost', icon: 'tabler:number-4', desc: 'Set up a Model Governance Framework and registry.' },
-          { title: 'GenAI Risk Assessment', icon: 'tabler:number-5', desc: 'Prompt & Data Exposure Test for LLMs.' },
-          { title: 'Compliance Scorecard', icon: 'tabler:number-6', desc: 'Compute a "Governed AI Readiness Score" across 6 pillars.' }
-        ].map(offer => (
-          <div class="gradient-border p-6 h-full hover:scale-[1.02] transition-transform duration-300">
-            <div class="flex items-center gap-4 mb-4">
-              <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
-                <Icon name={offer.icon} class="w-6 h-6" />
-              </div>
-              <h3 class="text-lg font-bold leading-tight">{offer.title}</h3>
-            </div>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">{offer.desc}</p>
-          </div>
-        ))}
-      </div>
+  <!-- Readiness Score Section -->
+  <section class="py-20 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
     </div>
-  </section>
 
-  <!-- Readiness Score Widget ******************* -->
-  <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')] bg-cover bg-center opacity-20"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center gap-12">
         <div class="flex-1">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">Governed AI Readiness Score</h2>
-          <p class="text-xl text-gray-300 mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6">Governed AI Readiness Score</h2>
+          <p class="text-lg text-slate-300 mb-8">
             We evaluate your environment across 6 critical categories, weighting them to produce a single readiness metric. This provides a clear target and tracks improvement over time.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div class="bg-white/10 backdrop-blur p-4 rounded-xl border border-white/20">
-              <Icon name="tabler:scoreboard" class="w-8 h-8 mb-2 text-blue-400" />
+              <Icon name="tabler:scoreboard" class="w-8 h-8 mb-2 text-orange-400" />
               <h4 class="font-bold">Comprehensive</h4>
-              <p class="text-sm text-gray-400">Composite 0-100 score</p>
+              <p class="text-sm text-slate-400">Composite 0-100 score</p>
             </div>
             <div class="bg-white/10 backdrop-blur p-4 rounded-xl border border-white/20">
-              <Icon name="tabler:robot" class="w-8 h-8 mb-2 text-purple-400" />
+              <Icon name="tabler:robot" class="w-8 h-8 mb-2 text-blue-400" />
               <h4 class="font-bold">Automated</h4>
-              <p class="text-sm text-gray-400">Machine-checkable metrics</p>
+              <p class="text-sm text-slate-400">Machine-checkable metrics</p>
             </div>
             <div class="bg-white/10 backdrop-blur p-4 rounded-xl border border-white/20">
-              <Icon name="tabler:list-check" class="w-8 h-8 mb-2 text-green-400" />
+              <Icon name="tabler:list-check" class="w-8 h-8 mb-2 text-emerald-400" />
               <h4 class="font-bold">Actionable</h4>
-              <p class="text-sm text-gray-400">Ranked remediation tasks</p>
+              <p class="text-sm text-slate-400">Ranked remediation tasks</p>
             </div>
           </div>
         </div>
         <div class="flex-1 flex justify-center">
           <!-- Gauge Visualization -->
           <div class="relative w-64 h-64">
-             <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
               <circle cx="50" cy="50" r="45" fill="none" stroke="#374151" stroke-width="6" />
-              <circle cx="50" cy="50" r="45" fill="none" stroke="#ea580c" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" class="drop-shadow-[0_0_15px_rgba(234,88,12,0.5)]" />
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#F97316" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" class="drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
             </svg>
             <div class="absolute inset-0 flex flex-col items-center justify-center">
               <span class="text-6xl font-bold text-white">75</span>
-              <span class="text-sm uppercase tracking-wider text-gray-400">Readiness Score</span>
+              <span class="text-sm uppercase tracking-wider text-slate-400">Readiness Score</span>
             </div>
           </div>
         </div>
@@ -242,35 +433,67 @@ const metadata = {
     </div>
   </section>
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contact Me',
-        href: 'mailto:ethiraj.k@dataadvisors.ai',
-      },
-    ]}
-    title="Ready to know your score?"
-    subtitle="Contact us today to schedule your Governed AI Readiness Assessment."
-  />
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const video = document.getElementById('demo-video') as HTMLVideoElement;
-      
-      if (video) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              video.play().catch((e) => console.log('Autoplay prevented:', e));
-            } else {
-              video.pause();
-            }
-          });
-        }, { threshold: 0.5 }); // Trigger when 50% visible
-
-        observer.observe(video);
-      }
-    });
-  </script>
+  <!-- Final CTA -->
+  <section id="contact" class="py-20 bg-white dark:bg-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-6">
+        Ready to know your score?
+      </h2>
+      <p class="text-lg text-slate-600 dark:text-slate-300 mb-10">
+        Contact us today to schedule your Governed AI Readiness Assessment
+      </p>
+      <a 
+        href="mailto:ethiraj.k@dataadvisors.ai" 
+        class="group inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-xl transition-all duration-300 shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1"
+      >
+        Get Started Today
+        <Icon name="tabler:arrow-right" class="w-6 h-6 ml-3 transform group-hover:translate-x-1 transition-transform" />
+      </a>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  /* Import modern fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap');
+
+  /* Apply fonts globally */
+  :root {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-display: 'Montserrat', var(--font-sans);
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('demo-video') as HTMLVideoElement;
+    
+    if (video) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch((e) => console.log('Autoplay prevented:', e));
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(video);
+    }
+  });
+</script>

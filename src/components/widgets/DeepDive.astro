@@ -1,0 +1,49 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+
+const {
+  id,
+  isDark = false,
+  containerClass = '',
+  bg = await Astro.slots.render('bg'),
+  title = 'Deep Dive: Data Architecture & Modeling',
+  subtitle = 'Ensuring a robust and scalable data foundation',
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${containerClass}`} bg={bg}>
+  <div class="mb-12 text-center md:text-left">
+    <h2 class="text-3xl font-bold mb-4">{title}</h2>
+    <p class="text-xl text-gray-600 dark:text-gray-400">{subtitle}</p>
+  </div>
+
+  <div class="glass rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-gray-100/50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+            <th class="p-6 font-semibold text-gray-900 dark:text-white">Dimension</th>
+            <th class="p-6 font-semibold text-gray-900 dark:text-white">Measurable Signal</th>
+            <th class="p-6 font-semibold hidden md:table-cell text-gray-900 dark:text-white">Example Evaluation</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900/40">
+          {[
+            ['Layer Design', 'Table naming convention or UC schema mapping', '≥ 90 % of tables properly layered'],
+            ['Pipeline Traceability', 'Presence of lineage edges in UC or DLT', '≥ 80 % lineage completeness'],
+            ['Schema Standardization', 'Similarity between schema patterns', '≤ 10 % inconsistent fields'],
+            ['Dimensional Modeling', 'Detect surrogate keys, star/snowflake joins', '≥ 70 % gold tables conform'],
+            ['Performance Optimization', 'Delta file count, partitioning', 'Small-file ratio < 5 %'],
+            ['Data Quality & Validation', 'DLT expectations, null ratio', '≥ 80 % tables with checks defined']
+          ].map(([dim, signal, eval_]) => (
+            <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+              <td class="p-6 font-medium text-blue-600 dark:text-blue-400">{dim}</td>
+              <td class="p-6 text-gray-600 dark:text-gray-300">{signal}</td>
+              <td class="p-6 hidden md:table-cell text-gray-500 dark:text-gray-400 font-mono text-sm">{eval_}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</WidgetWrapper>

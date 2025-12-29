@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  phase: string;
+  title: string;
+  description: string;
+  icon?: string;
+  color?: 'blue' | 'green' | 'red' | 'yellow';
+  class?: string;
+}
+
+const { phase, title, description, icon = 'tabler:check', color = 'blue', class: className = '' } = Astro.props;
+
+const colors = {
+  blue: {
+    badge: 'bg-blue-600 text-white',
+    card: 'bg-[#FFFBEB] border-gray-200', // Using the cream background from the image
+    icon: 'text-blue-600',
+  },
+  green: {
+    badge: 'bg-green-500 text-white',
+    card: 'bg-[#FFFBEB] border-gray-200',
+    icon: 'text-green-500',
+  },
+  red: {
+    badge: 'bg-red-400 text-white',
+    card: 'bg-[#FFFBEB] border-gray-200',
+    icon: 'text-red-400',
+  },
+  yellow: {
+    badge: 'bg-yellow-400 text-black',
+    card: 'bg-[#FFFBEB] border-gray-200',
+    icon: 'text-yellow-500',
+  },
+};
+
+const theme = colors[color];
+---
+
+<div class={`relative rounded-2xl border p-8 shadow-sm max-w-sm ${theme.card} ${className}`}>
+  <!-- Badge -->
+  <div class={`absolute -top-4 -left-4 px-6 py-1.5 rounded-full font-semibold text-sm shadow-sm z-10 ${theme.badge}`}>
+    {phase}
+  </div>
+
+  <div class="flex flex-col items-center text-center">
+    <!-- Icon Slot or Default Icon -->
+    <div class="h-32 mb-4 flex items-center justify-center w-full">
+      <slot name="icon">
+        <Icon name={icon} class={`w-20 h-20 ${theme.icon}`} />
+      </slot>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center justify-center gap-2">
+      <slot name="title-icon" />
+      {title}
+    </h3>
+
+    <!-- Description -->
+    <div class="text-gray-600 text-sm leading-relaxed" set:html={description} />
+  </div>
+</div>
