@@ -71,9 +71,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
-      </a>
+      <!-- Logo removed as requested -->
       <div class="flex items-center md:hidden">
         <ToggleMenu />
       </div>
@@ -90,13 +88,29 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button
-                    type="button"
-                    class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
-                  >
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
-                  </button>
+                  {href ? (
+                    <a
+                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                      href={href}
+                    >
+                      {text}{' '}
+                      <Icon
+                        name="tabler:chevron-down"
+                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                      />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                    >
+                      {text}{' '}
+                      <Icon
+                        name="tabler:chevron-down"
+                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                      />
+                    </button>
+                  )}
                   <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>

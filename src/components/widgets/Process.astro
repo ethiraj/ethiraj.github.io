@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="process" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header Label -->
+    <div class="flex items-center justify-center mb-16 px-4">
+      <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow max-w-[100px]"></div>
+      <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-slate-400 dark:text-slate-500 px-6">
+        Our Process
+      </h2>
+      <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow max-w-[100px]"></div>
+    </div>
+
+    <!-- The Infographic Image -->
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-white rounded-2xl p-4 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 overflow-hidden group transition-all hover:shadow-2xl hover:shadow-orange-500/5">
+        <img 
+          src="/images/roadmap-infographic.png" 
+          alt="Our Process Framework" 
+          class="w-full h-auto rounded-xl grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Final CTA in Roadmap (Subtle Version) -->
+    <div class="mt-20 flex flex-col items-center gap-6">
+      <p class="text-slate-600 dark:text-slate-400 italic text-sm">
+        Click to enlarge or review our full methodology below.
+      </p>
+      <a href="#contact" class="inline-flex items-center px-8 py-3 text-base font-bold text-slate-900 dark:text-white hover:text-orange-600 transition-all group">
+        Align on your 30-day roadmap
+        <Icon name="tabler:arrow-right" class="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform" />
+      </a>
+    </div>
+  </div>
+</section>

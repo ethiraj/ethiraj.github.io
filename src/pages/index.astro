@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Process from '~/components/widgets/Process.astro';
 import { Icon } from 'astro-icon/components';
 
 const metadata = {
@@ -13,485 +13,483 @@ const metadata = {
 
 <Layout metadata={metadata}>
 
-  <!-- Hero Section - Energy First with Personal Brand -->
+  <!-- Hero Section - Expert-Led Practice -->
   <section id="home" class="relative pt-24 pb-20 sm:pt-32 sm:pb-28 overflow-hidden">
     <!-- Modern gradient background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800"></div>
-    
-    <!-- Geometric accent -->
-    <div class="absolute top-0 right-0 w-1/3 h-full opacity-10">
-      <svg viewBox="0 0 200 200" class="w-full h-full">
-        <defs>
-          <linearGradient id="grid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#F97316;stop-opacity:0.3" />
-            <stop offset="100%" style="stop-color:#0F172A;stop-opacity:0.1" />
-          </linearGradient>
-        </defs>
-        <path d="M0,0 L200,0 L200,200 L0,200 Z" fill="url(#grid-gradient)" opacity="0.1"/>
-        <line x1="0" y1="50" x2="200" y2="50" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
-        <line x1="0" y1="100" x2="200" y2="100" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
-        <line x1="0" y1="150" x2="200" y2="150" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
-        <line x1="50" y1="0" x2="50" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
-        <line x1="100" y1="0" x2="100" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
-        <line x1="150" y1="0" x2="150" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
-      </svg>
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800"></div>
+
+    <!-- Architectural Schematic background image -->
+    <div class="absolute inset-0 opacity-[0.35] dark:opacity-[0.4] pointer-events-none">
+      <img
+        src="/hero-bg.png"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <!-- Subtle masking gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-transparent to-slate-50 dark:from-slate-900/80 dark:via-transparent dark:to-slate-900"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <!-- Trust Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 rounded-full mb-6 border border-orange-200/50 dark:border-orange-800/30 backdrop-blur-sm">
-          <Icon name="tabler:award" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
-          <span class="text-sm font-semibold text-slate-800 dark:text-slate-200">20+ Years | Energy & Industrial Data Leadership</span>
-        </div>
 
-        <!-- Mission Statement Eyebrow -->
-        <div class="mb-4">
-          <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-orange-600 dark:text-orange-500">
-            Reliable numbers. Faster decisions. Without disrupting operations.
-          </span>
+        <!-- Trust Badge -->
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 rounded-full mb-8 border border-orange-200/50 dark:border-orange-800/30 backdrop-blur-sm">
+          <Icon name="tabler:users" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
+          <span class="text-sm font-semibold text-slate-800 dark:text-slate-200">Expert-Led Specialist Practice | 20+ Years Energy & Industrial Data</span>
         </div>
 
         <!-- Main Headline -->
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-          We help Houston energy and industrial companies move from <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">spreadsheet chaos</span> to trusted reporting
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.2]">
+          From Fragmented Data to <br class="hidden sm:block"/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">Trusted Reporting</span>
         </h1>
 
         <!-- Sub-headline -->
-        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-4 leading-relaxed max-w-3xl mx-auto">
-          Delivered in weeks, not months.
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+          We deliver reliable operational dashboards for energy and industrial companies—<span class="font-semibold text-slate-700 dark:text-slate-300">in weeks, by expert practitioners</span>, <span class="font-semibold text-orange-600 dark:text-orange-400">not junior consulting teams</span>.
         </p>
 
-        <!-- Supporting Line -->
-        <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-10 italic">
-          Built for oilfield services, power generation, and manufacturing teams.
-        </p>
+        <!-- Industry Tags -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10 text-sm">
+          <span class="px-4 py-2 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+            Oilfield Services
+          </span>
+          <span class="px-4 py-2 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+            Power Generation
+          </span>
+          <span class="px-4 py-2 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+            Manufacturing
+          </span>
+        </div>
 
         <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <a 
-            href="#contact" 
-            class="group inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-0.5 min-w-[200px]"
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <a
+            href="#contact"
+            class="group inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-lg transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-0.5"
           >
-            Book a Strategy Call
+            Get Your Free Assessment
             <Icon name="tabler:arrow-right" class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#proof"
+            class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
+          >
+            See Client Results
           </a>
         </div>
 
-        <!-- Quick stats -->
-        <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto pt-8 border-t border-slate-200 dark:border-slate-700">
-          <div class="text-center flex flex-col items-center justify-center">
-            <Icon name="tabler:building-factory" class="w-8 h-8 text-orange-600 dark:text-orange-400 mb-1" />
-            <div class="text-sm text-slate-600 dark:text-slate-400">Built for Energy & Industrial Ops</div>
-          </div>
-          <div class="text-center">
-            <div class="text-xl sm:text-2xl font-bold text-orange-600 dark:text-orange-400">2-3</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400 mt-1">Weeks to Value</div>
-          </div>
-          <div class="text-center">
-            <div class="text-xl sm:text-2xl font-bold text-orange-600 dark:text-orange-400">100%</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400 mt-1">Senior-Led</div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
 
 
 
-  <!-- About Us Section -->
-  <section id="about" class="relative py-20 bg-white dark:bg-slate-800">
+
+  <!-- Services Section (Methodology) -->
+  <section id="approach" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-            Why Houston Operators Work With Us
-          </h2>
-          <div class="h-1 bg-gradient-to-r from-orange-600 to-orange-400 w-24 mx-auto mb-8 rounded-full"></div>
+
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="h-px w-12 bg-orange-600"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Our Services</span>
         </div>
-
-        <div class="prose prose-base dark:prose-invert mx-auto mb-12">
-          <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
-            We are a <span class="font-semibold text-slate-900 dark:text-white">Houston-based analytics practice</span> helping energy and industrial companies turn fragmented data into numbers leadership can trust.
-          </p>
-          
-          <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
-            With <span class="font-semibold text-slate-900 dark:text-white">20+ years of enterprise data and AI experience</span>, our work is always senior-led. No junior handoffs. No learning on your time. You work directly with practitioners who understand how data supports real operations.
-          </p>
-          <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
-            Our goal is simple: help teams stop debating numbers and start making decisions — by <span class="font-semibold text-slate-900 dark:text-white">building clarity, ownership, and trust</span> into reporting.
-          </p>
-
-          <div class="mt-8 flex justify-center">
-            <a 
-              href="/about" 
-              class="inline-flex items-center text-orange-600 dark:text-orange-400 font-semibold hover:text-orange-700 dark:hover:text-orange-300 transition-colors group"
-            >
-              See how teams like yours get to trusted numbers
-              <Icon name="tabler:arrow-right" class="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-200 dark:border-slate-700">
-
-          <div class="text-center">
-            <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">100%</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Senior-Led</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">2-3</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Weeks to Value</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">F500</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Client Proven</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Problem Section -->
-  <section class="py-24 bg-white dark:bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-20">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-            Most companies have plenty of data. <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-400">What they lack is trust.</span>
-          </h2>
-          <p class="text-base text-slate-600 dark:text-slate-300">
-            Sound familiar? You're not alone.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <!-- Fragmented Truth -->
-          <div class="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-orange-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Icon name="tabler:puzzle" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Fragmented Truth</h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              KPIs scattered across Excel, ERP, field systems, and finance reports. No single source of truth.
-            </p>
-          </div>
-
-          <!-- Conflicting Numbers -->
-          <div class="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-orange-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Icon name="tabler:alert-triangle" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Conflicting Numbers</h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Different teams reporting different figures in the same meeting. Trust erodes before the meeting ends.
-            </p>
-          </div>
-
-          <!-- Wasted Effort -->
-          <div class="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-orange-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Icon name="tabler:clock" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Wasted Effort</h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Reporting takes days or weeks to prepare, not seconds. By the time it's ready, it's already outdated.
-            </p>
-          </div>
-
-          <!-- Stagnant Tools -->
-          <div class="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-orange-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Icon name="tabler:chart-line" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Stagnant Tools</h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Expensive dashboards exist but abandoned because they don't answer the operator's real questions.
-            </p>
-          </div>
-        </div>
-
-        <!-- Final bridging line -->
-        <div class="mt-16 text-center">
-          <p class="text-lg sm:text-xl font-medium text-slate-800 dark:text-slate-200 italic">
-            "This is what growth looks like when <span class="text-orange-600 dark:text-orange-500 font-bold">systems evolve faster than foundations.</span>"
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="relative py-24 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
-      <!-- Subtle Grid Background -->
-      <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
-      
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="text-center mb-16">
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-            Roadmap to Value
-          </h2>
-          <p class="text-base font-medium text-orange-600 dark:text-orange-400 max-w-3xl mx-auto mb-4 italic">
-            "This isn't a tooling problem—it's a foundation and clarity problem."
-          </p>
-          <p class="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            A proven framework to deliver operational excellence in weeks, not months.
-          </p>
-        </div>
-
-        <div class="max-w-7xl mx-auto flex justify-center">
-          <img 
-            src="/roadmap-process.png" 
-            alt="Our Roadmap Process" 
-            class="w-full h-auto rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-white dark:bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-          How We Help Houston Operators Get to Trusted Numbers
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-[1.2] tracking-tight">
+          How We Drive Operational Clarity
         </h2>
-        <p class="text-base text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-          We move teams from data chaos to operational clarity through these three specialized outcome buckets:
+        <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+          Three specialized services designed for asset-heavy operations where decisions can't wait for standard IT timelines.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Outcome 1: Trusted Reporting -->
-        <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all hover:shadow-xl group flex flex-col h-full">
-          <div class="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 dark:from-orange-900/30 dark:to-orange-900/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Icon name="tabler:dashboard" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">Trusted Operational Reporting</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-6 flex-grow">
-            We replace manual, spreadsheet-driven reporting with a single, trusted view leadership actually uses — across operations, finance, and management.
-          </p>
-          <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-            <span class="text-xs font-bold text-orange-600 dark:text-orange-500 uppercase tracking-widest">Delivered in weeks, not months.</span>
-          </div>
-        </div>
-
-        <!-- Outcome 2: Reliable Foundations -->
-        <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all hover:shadow-xl group flex flex-col h-full">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-900/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Icon name="tabler:database-heart" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">Reliable Data Foundations</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">
-            We design pragmatic data platforms that support growth without disrupting operations — using cloud-native, lakehouse, and governance-first patterns.
-          </p>
-        </div>
-
-        <!-- Outcome 3: AI & Automation -->
-        <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all hover:shadow-xl group flex flex-col h-full">
-          <div class="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-purple-900/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Icon name="tabler:brain" class="w-6 h-6 text-purple-600 dark:text-purple-400" />
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">AI & Automation</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-4">
-            (When the Foundation Is Ready)
-          </p>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">
-            Once reporting is trusted, we help teams apply AI and automation where it actually adds value — forecasting, anomaly detection, and intelligent workflows.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project Highlights -->
-  <section id="projects" class="py-24 bg-slate-50 dark:bg-slate-900 overflow-hidden relative">
-    <!-- Subtle background decoration -->
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-orange-100/30 dark:bg-orange-900/10 rounded-full blur-3xl"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-          Proven in Complex, Real-World Environments
-        </h2>
-        <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-          The same approach scales cleanly from global enterprises to Houston energy and industrial teams.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Project 1 (Large/Featured) -->
-        <div class="md:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-8 lg:p-10 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all hover:shadow-2xl group relative overflow-hidden">
-          <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-            <Icon name="tabler:building-bank" class="w-32 h-32 text-slate-900 dark:text-white" />
-          </div>
+      <!-- Service Cards -->
+      <div class="grid md:grid-cols-3 gap-8 mb-20">
+        <!-- Service 1: Trusted Reporting -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-500/30 dark:hover:border-orange-500/30 transition-all hover:shadow-2xl group relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-red-500/5 -mr-12 -mt-12 rounded-full"></div>
           
-          <div class="relative z-10">
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider">Financial Services</span>
-              <span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full text-xs font-bold uppercase tracking-wider">Reporting Foundation</span>
+          <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center mb-6 border border-red-100 dark:border-red-800/50">
+            <Icon name="tabler:target-arrow" class="w-6 h-6 text-red-600 dark:text-red-400" />
+          </div>
+
+          <div class="text-[10px] font-bold uppercase tracking-widest text-red-600 mb-2">Step 1: Stabilize</div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Trusted Reporting</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            Eliminate "spreadsheet debates" with a single source of operational truth that leadership actually trusts.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-red-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Unified reporting ownership</span>
             </div>
-            
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">Built a Trusted Reporting Foundation for a Global Asset Manager</h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-base mb-8 max-w-2xl">
-              Designed and delivered a unified data platform that replaced fragmented reporting with a single, trusted source of truth across operations, finance, and leadership teams.
-            </p>
-            
-            <div class="grid sm:grid-cols-2 gap-6 pt-8 border-t border-slate-100 dark:border-slate-700">
-              <div class="flex items-start gap-3">
-                <div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                  <Icon name="tabler:chart-bar" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Key Result</div>
-                  <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">50% reduction in data ingestion delays</div>
-                </div>
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-red-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Automated daily visibility</span>
+            </div>
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-red-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Stakeholder-aligned KPIs</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-auto border-t border-slate-100 dark:border-slate-700/50">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-2xl font-bold text-slate-900 dark:text-white">5 Days <span class="text-red-600">→</span> 4 Hours</div>
+                <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mt-1">Month-End Close</div>
               </div>
-              <div class="flex items-start gap-3">
-                <div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                  <Icon name="tabler:shield-check" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Impact</div>
-                  <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Enterprise-wide governance with clear data ownership</div>
-                </div>
+              <div class="p-2 bg-red-50 dark:bg-red-900/20 rounded-lg">
+                <Icon name="tabler:clock-hour-4" class="w-5 h-5 text-red-600" />
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 (Standard) -->
-        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all hover:shadow-2xl group flex flex-col">
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 rounded-full text-xs font-bold uppercase tracking-wider">Energy</span>
-          </div>
+        <!-- Service 2: Data Foundations -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 hover:border-blue-500/30 dark:hover:border-blue-500/30 transition-all hover:shadow-2xl group relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 -mr-12 -mt-12 rounded-full"></div>
           
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Enabled Standardized Data Access Across Energy Operations</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-6 flex-grow">
-            Defined and implemented a standardized data architecture that made operational and subsurface data consistently accessible across teams — without custom one-off solutions.
+          <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mb-6 border border-blue-100 dark:border-blue-800/50">
+            <Icon name="tabler:database" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+          </div>
+
+          <div class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2">Step 2: Build</div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Data Foundations</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            Move beyond fragile silos to a modern, governed platform designed for industrial scale.
           </p>
           
-          <div class="pt-6 border-t border-slate-100 dark:border-slate-700">
-            <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Key Outcome</div>
-            <div class="flex items-center gap-2">
-              <Icon name="tabler:circle-check" class="w-5 h-5 text-blue-500" />
-              <span class="text-sm font-medium text-slate-800 dark:text-slate-200">Consistent data access across assets and vendors</span>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Lakehouse Architecture</span>
+            </div>
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Governed Data Catalog</span>
+            </div>
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">ERP & IoT Integration</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-auto border-t border-slate-100 dark:border-slate-700/50">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-2xl font-bold text-slate-900 dark:text-white">7 <span class="text-blue-600">→</span> 1 Platform</div>
+                <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mt-1">Data Consolidation</div>
+              </div>
+              <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                <Icon name="tabler:arrows-join" class="w-5 h-5 text-blue-600" />
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all hover:shadow-2xl group flex flex-col">
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider">Healthcare</span>
-          </div>
+        <!-- Service 3: Intelligent Automation -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 hover:border-green-500/30 dark:hover:border-green-500/30 transition-all hover:shadow-2xl group relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-green-500/5 -mr-12 -mt-12 rounded-full"></div>
           
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Improved Data Accuracy Using AI-Assisted Validation</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-6 flex-grow">
-            Applied AI-assisted validation to improve data accuracy and reduce manual review effort — ensuring teams trusted the numbers before acting on them.
-          </p>
-          
-          <div class="pt-6 border-t border-slate-100 dark:border-slate-700">
-            <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Key Outcome</div>
-            <div class="flex items-center gap-2">
-              <Icon name="tabler:circle-check" class="w-5 h-5 text-blue-500" />
-              <span class="text-sm font-medium text-slate-800 dark:text-slate-200">Fewer manual corrections and rework</span>
-            </div>
+          <div class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center mb-6 border border-green-100 dark:border-green-800/50">
+            <Icon name="tabler:brain" class="w-6 h-6 text-green-600 dark:text-green-400" />
           </div>
-        </div>
 
-        <!-- Project 4 -->
-        <div class="md:col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all hover:shadow-2xl group flex flex-col">
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 rounded-full text-xs font-bold uppercase tracking-wider">Industrials</span>
-          </div>
-          
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Reduced Deployment Friction Across Environments</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-6 flex-grow">
-            Simplified deployment and change management across environments so reporting and data updates could move faster without breaking production systems.
+          <div class="text-[10px] font-bold uppercase tracking-widest text-green-600 mb-2">Step 3: Optimize</div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Intelligent Automation</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            Apply AI where it creates measurable P&L impact on your operations and asset performance.
           </p>
           
-          <div class="pt-6 border-t border-slate-100 dark:border-slate-700">
-            <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Key Outcome</div>
-            <div class="flex items-center gap-2">
-              <Icon name="tabler:circle-check" class="w-5 h-5 text-blue-500" />
-              <span class="text-sm font-medium text-slate-800 dark:text-slate-200">Faster, safer changes without downtime</span>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Predictive Intelligence</span>
+            </div>
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Anomaly Early-Warning</span>
+            </div>
+            <div class="flex items-start gap-3 group/item">
+              <Icon name="tabler:check" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Automated Smart Workflows</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-auto border-t border-slate-100 dark:border-slate-700/50">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-2xl font-bold text-slate-900 dark:text-white">48-Hr <span class="text-green-600">Headstart</span></div>
+                <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mt-1">Anomaly Detection</div>
+              </div>
+              <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                <Icon name="tabler:bolt" class="w-5 h-5 text-green-600" />
+              </div>
             </div>
           </div>
         </div>
-      <div class="mt-16 text-center">
-        <p class="text-lg text-slate-600 dark:text-slate-400 italic">
-          Different scale. Same problems. Same disciplined approach.
-        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- Blog Section -->
-  <section id="blog" class="py-24 bg-white dark:bg-slate-800 relative overflow-hidden">
-    <!-- Subtle background gradient -->
-    <div class="absolute bottom-0 left-0 -ml-24 -mb-24 w-80 h-80 bg-blue-100/30 dark:bg-blue-900/10 rounded-full blur-3xl"></div>
-    
-    <BlogLatestPosts
-      title="Insights & <span class='text-orange-600 dark:text-orange-500'>Resources Hub</span>"
-      information="Strategic guidance on data architecture, AI governance, and digital transformation for energy and industrial leaders."
-      count={3}
-      classes={{
-        container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10',
-        title: 'text-2xl sm:text-3xl font-bold tracking-tight mb-4',
-        information: 'text-base text-slate-600 dark:text-slate-400 mb-16 max-w-2xl'
-      }}
-    />
-  </section>
-
-  <!-- Final CTA -->
-  <section id="contact" class="relative py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:to-slate-900"></div>
-    
-    <!-- Accent pattern -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-0 left-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
-          Ready to Transform Your Data into Action?
-        </h2>
+      <!-- Value Stack Visual -->
+      <div class="mb-16 flex flex-col items-center">
+        <div class="relative group max-w-[1024px] w-full">
+          <!-- Subtle glow effect -->
+          <div class="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-blue-500/20 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          
+          <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-2 shadow-2xl border border-slate-100 dark:border-slate-800">
+            <img
+              src="/images/homepage-hero.png"
+              alt="From Data Chaos to Operational Clarity - A proven three-step approach: Stabilize (Trusted Reporting), Build (Data Foundations), and Optimize (Intelligent Automation)"
+              class="w-full h-auto rounded-xl"
+            />
+          </div>
+        </div>
         
-        <p class="text-lg text-slate-300 mb-12">
-          Let's discuss your challenges and see if a Health Check is the right next step.
-        </p>
+        <div class="mt-8 flex items-center gap-3 px-6 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-full border border-slate-100 dark:border-slate-700/50">
+          <Icon name="tabler:info-circle" class="w-4 h-4 text-orange-600 dark:text-orange-400" />
+          <p class="text-sm font-medium text-slate-600 dark:text-slate-300 italic">
+            Each layer requires the foundation below to be solid — you can't skip steps.
+          </p>
+        </div>
+      </div>
 
-        <a 
-          href="mailto:ethiraj.k@dataadvisors.ai" 
-          class="group inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-xl transition-all duration-300 shadow-2xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1 min-w-[280px]"
+      <!-- CTA to Full Services Page -->
+      <div class="text-center">
+        <a
+          href="/services"
+          class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
         >
-          Book Your Strategy Call
-          <Icon name="tabler:arrow-right" class="w-6 h-6 ml-3 transform group-hover:translate-x-1 transition-transform" />
+          View Full Service Details & Diagrams
+          <Icon name="tabler:arrow-right" class="w-5 h-5 ml-2" />
         </a>
+      </div>
 
-        <!-- Contact Info -->
-        <div class="mt-16 pt-8 border-t border-slate-700">
-          <div class="flex flex-col sm:flex-row gap-8 justify-center items-center text-slate-400">
-            <a href="mailto:ethiraj.k@dataadvisors.ai" class="flex items-center gap-2 hover:text-orange-400 transition-colors">
-              <Icon name="tabler:mail" class="w-5 h-5" />
-              <span>ethiraj.k@dataadvisors.ai</span>
-            </a>
-            <span class="hidden sm:block text-slate-600">|</span>
-            <a href="https://www.linkedin.com/in/ethiraj-krishnamanaidu/" target="_blank" class="flex items-center gap-2 hover:text-orange-400 transition-colors">
-              <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
-              <span>LinkedIn</span>
-            </a>
-            <span class="hidden sm:block text-slate-600">|</span>
-            <div class="flex items-center gap-2">
-              <Icon name="tabler:map-pin" class="w-5 h-5" />
-              <span>Houston, TX</span>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="relative py-24 bg-white dark:bg-slate-900 overflow-hidden border-t border-slate-100 dark:border-slate-800/50">
+    <!-- Sophisticated Blueprint Pattern -->
+    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none overflow-hidden">
+      <img src="/blueprint-watermark.png" alt="" class="absolute -left-20 -top-20 w-1/2 h-full object-contain rotate-12" />
+      <img src="/blueprint-watermark.png" alt="" class="absolute -right-20 -bottom-20 w-1/4 h-full object-contain -rotate-12" />
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mb-16">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="h-px w-12 bg-orange-600"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Why Us?</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-[1.2] tracking-tight">
+          Modernizing Industrial Intelligence
+        </h2>
+        <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+          Three reasons energy companies choose our approach over traditional consulting firms.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <!-- Pillar 1: Immediate Value -->
+        <div class="space-y-4">
+          <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Speed</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Working Dashboards, Not Just Proposals</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+            Traditional firms spend 8-12 weeks "scoping." We build with your actual data from day one—you see working results in the first engagement, not after months of planning.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Domain Knowledge -->
+        <div class="space-y-4">
+          <div class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">Domain Expertise</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Industrial & Operational Data Expertise</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+            We understand production reporting, asset performance tracking, and operational compliance across energy and industrial sectors—no months spent learning your business on your budget.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Modern Platforms -->
+        <div class="space-y-4">
+          <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Technology</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Modern Cloud Platforms, Not Manual Processes</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+            Built on enterprise cloud data platforms that scale with growth and acquisitions—not brittle spreadsheets and manual workflows that break under operational pressure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Results Section -->
+  <section id="proof" class="py-24 bg-slate-50 dark:bg-slate-900/40 border-y border-slate-100 dark:border-slate-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="h-px w-12 bg-orange-600"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Clients</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.2] mb-4">
+          Proven Results Across Energy & industrial
+        </h2>
+        <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+          Representative client engagements across industries.
+        </p>
+      </div>
+
+      <!-- Asymmetric Layout - Not a Grid -->
+      <div class="space-y-8">
+
+        <!-- Featured Story: Full Width -->
+        <div class="group relative bg-gradient-to-r from-orange-50 via-white to-orange-50/30 dark:from-orange-900/10 dark:via-slate-800 dark:to-orange-900/5 p-8 rounded-3xl border-l-4 border-orange-500 hover:border-orange-600 transition-all hover:shadow-xl">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-3">
+              <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Fortune 500 Energy Operator</div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">48-Hour Lag → Same-Day Visibility</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Unified 5 disconnected systems into automated reporting layer—operations managers now see job-level P&L same-day instead of waiting 2+ days for manual consolidation.
+              </p>
+            </div>
+            <div class="flex justify-end">
+              <div class="text-right">
+                <div class="text-3xl font-bold text-orange-600 mb-2">48 Hours → Real-Time</div>
+                <div class="text-xs text-slate-500 uppercase font-bold tracking-widest">Reporting Cycle</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Column: Offset -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Manufacturing - Left -->
+          <div class="md:mt-12 group relative bg-white dark:bg-slate-800 p-6 rounded-2xl border-2 border-blue-100 dark:border-blue-900/30 hover:border-blue-400 dark:hover:border-blue-600 transition-all hover:shadow-lg hover:-translate-y-1">
+            <div class="space-y-3">
+              <div class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                <span class="text-xs font-bold text-blue-700 dark:text-blue-400">Mid-Market Manufacturer</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Scaled Through 3 Acquisitions</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Replaced fragile Excel workflows with cloud data platform—system scaled through 2 additional acquisitions without rework.
+              </p>
+              <div class="pt-3 border-t border-slate-200 dark:border-slate-700">
+                <div class="text-2xl font-bold text-blue-600">5 Days → 1 Day</div>
+                <div class="text-xs text-slate-500 uppercase font-bold tracking-widest mt-1">Month-End Close</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Power Generation - Right -->
+          <div class="group relative bg-gradient-to-br from-orange-50 to-white dark:from-orange-900/20 dark:to-slate-800 p-6 rounded-2xl border border-orange-200 dark:border-orange-800/30 hover:border-orange-400 dark:hover:border-orange-600 transition-all hover:shadow-lg">
+            <div class="space-y-3">
+              <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Power Generation Company</div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">First-Ever Cross-Site View</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Centralized asset data from 12 facility tools—leadership gained visibility, identifying $3M in optimizations.
+              </p>
+              <div class="pt-3">
+                <div class="text-2xl font-bold text-orange-600">12 → 1 Platform</div>
+                <div class="text-xs text-slate-500 uppercase font-bold tracking-widest mt-1">Consolidation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom: Compact Card -->
+        <div class="max-w-2xl ml-auto group relative bg-gradient-to-l from-green-50 to-transparent dark:from-green-900/10 dark:to-transparent p-6 rounded-2xl border border-green-200 dark:border-green-800/30 hover:border-green-400 dark:hover:border-green-600 transition-all">
+          <div class="flex items-start justify-between gap-8">
+            <div class="space-y-2 flex-1">
+              <div class="text-xs font-bold uppercase tracking-[0.2em] text-green-600">Oilfield Services Provider</div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight">SOC 2 Audit, First Attempt</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Automated data catalog with lineage tracking—passed SOC 2 on first attempt.
+              </p>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="text-xl font-bold text-green-600 whitespace-nowrap">3 Months → 2 Weeks</div>
+              <div class="text-xs text-slate-500 uppercase font-bold tracking-widest mt-1">Audit Prep</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <Process />
+
+  <!-- Final CTA / Contact Section -->
+  <section id="contact" class="relative py-24 border-t border-slate-100 dark:border-slate-800/50 overflow-hidden bg-slate-50/50 dark:bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Pillar 1: The Invitation & Core Message -->
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-orange-600"></div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Align on Reality</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white leading-tight mb-8">
+            Professional Clarity <br/>
+            <span class="italic font-serif text-slate-400 dark:text-slate-500">before</span> technology investment.
+          </h2>
+          
+          <div class="space-y-6 max-w-xl">
+            <p class="text-xl text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
+              The first step isn't a tool purchase. It's a <span class="text-orange-600 font-bold underline decoration-orange-600/30 underline-offset-8">Readiness Assessment</span>.
+            </p>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+              A 2-week deep dive into your current pipelines to identify the exact technical and operational bottlenecks eroding your team's trust in the data.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+              <a href="mailto:ethiraj.k@dataadvisors.ai" class="btn-primary px-8 py-4 shadow-xl shadow-orange-600/10 transition-transform hover:-translate-y-0.5">
+                Start Your Assessment
+                <Icon name="tabler:arrow-right" class="w-5 h-5 ml-3" />
+              </a>
+              <a href="/about" class="text-slate-900 dark:text-white font-bold hover:text-orange-600 transition-colors flex items-center group">
+                Our Methodology 
+                <Icon name="tabler:download" class="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Coordinates & Location -->
+        <div class="lg:col-span-5 lg:pl-12 lg:border-l border-slate-200 dark:border-slate-800">
+          <div class="space-y-10">
+            <div>
+              <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Direct Contact</div>
+              <a href="mailto:ethiraj.k@dataadvisors.ai" class="text-2xl font-bold text-slate-900 dark:text-white hover:text-orange-600 transition-colors break-all">
+                ethiraj.k@dataadvisors.ai
+              </a>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-8">
+              <div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Office Location</div>
+                <div class="text-base font-semibold text-slate-900 dark:text-white leading-relaxed">
+                  1880 S Dairy Ashford Rd<br/>
+                  Suite 207-366<br/>
+                  Houston, TX 77077
+                </div>
+              </div>
+              <div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Network</div>
+                <a href="https://www.linkedin.com/in/ethiraj-krishnamanaidu/" target="_blank" class="text-lg font-bold text-slate-900 dark:text-white hover:text-orange-600 flex items-center gap-2">
+                  LinkedIn <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Subtle Trust Note -->
+            <div class="pt-8 border-t border-slate-100 dark:border-slate-800/50">
+              <p class="text-xs text-slate-500 dark:text-slate-400 italic">
+                Currently taking on select projects for Q1 2026. <br/>
+                Typical engagement response within 24 hours.
+              </p>
             </div>
           </div>
         </div>

@@ -1,0 +1,233 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Data & AI Readiness - Align on Reality',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-20 sm:pt-32 sm:pb-28 overflow-hidden">
+    <!-- Modern gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800"></div>
+    
+    <!-- Geometric accent -->
+    <div class="absolute top-0 right-0 w-1/3 h-full opacity-10">
+      <svg viewBox="0 0 200 200" class="w-full h-full">
+        <defs>
+          <linearGradient id="ready-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#F97316;stop-opacity:0.3" />
+            <stop offset="100%" style="stop-color:#0F172A;stop-opacity:0.1" />
+          </linearGradient>
+        </defs>
+        <path d="M0,0 L200,0 L200,200 L0,200 Z" fill="url(#ready-gradient)" opacity="0.1"/>
+        <line x1="0" y1="50" x2="200" y2="50" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="0" y1="100" x2="200" y2="100" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="0" y1="150" x2="200" y2="150" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="50" y1="0" x2="50" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="100" y1="0" x2="100" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="150" y1="0" x2="150" y2="200" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Trust Badge -->
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 rounded-full mb-8 border border-orange-200/50 dark:border-orange-800/30 backdrop-blur-sm">
+          <Icon name="tabler:rocket" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
+          <span class="text-sm font-semibold text-slate-800 dark:text-slate-200">The Pre-Investment Standard</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+          Align on Reality with <br class="hidden lg:block"/> 
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">Data & AI Readiness.</span>
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+          Technology spend without operational readiness is waste. Get a comprehensive 0-100 Readiness Score and a 50-day actionable roadmap across your enterprise data and AI platform.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <a 
+            href="#contact" 
+            class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-0.5 min-w-[240px]"
+          >
+            Start Your Assessment
+            <Icon name="tabler:arrow-right" class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a 
+            href="#demo" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md min-w-[240px]"
+          >
+            <Icon name="tabler:player-play" class="w-5 h-5 mr-2" />
+            Watch Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Demo Section -->
+  <section id="demo" class="py-24 bg-white dark:bg-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+          The Reality Check in Action
+        </h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          See how our framework transforms raw cloud infrastructure into a governed, audit-ready operational environment.
+        </p>
+      </div>
+      
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700">
+        <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-blue-600 rounded-3xl blur opacity-20 -z-10"></div>
+        <video 
+          id="demo-video"
+          controls 
+          muted
+          playsinline
+          class="w-full h-auto"
+          poster="/images/dashboard-screenshot.png"
+        >
+          <source src="/videos/Demo2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gauge Section -->
+  <section class="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="flex-1 space-y-8">
+          <h2 class="text-2xl sm:text-3xl font-bold">The Governed Readiness Score</h2>
+          <p class="text-lg text-slate-300 leading-relaxed">
+            We move beyond subjective "readiness" into quantifiable metrics. Our assessment audits your infrastructure, governance, and model architecture to produce a single, trackable score.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="flex gap-4">
+              <Icon name="tabler:shield-check" class="w-6 h-6 text-orange-500" />
+              <div>
+                <h4 class="font-bold">Trust First</h4>
+                <p class="text-sm text-slate-400">Security and RBAC audit</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <Icon name="tabler:database-search" class="w-6 h-6 text-blue-500" />
+              <div>
+                <h4 class="font-bold">Asset Integrity</h4>
+                <p class="text-sm text-slate-400">Metadata & Catalog review</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <div class="relative w-72 h-72">
+            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#374151" stroke-width="6" />
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#F97316" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" />
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-5xl font-bold">75</span>
+              <span class="text-xs uppercase tracking-widest text-slate-400">Ready for Launch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables Section -->
+  <section class="py-24 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="h-px w-12 bg-orange-600"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">The Output</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Everything You Need to Execute.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Infrastructure -->
+        <div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
+          <Icon name="tabler:server" class="w-10 h-10 text-orange-600 mb-6" />
+          <h3 class="text-xl font-bold mb-4">Infrastructure Audit</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Full review of compute efficiency, policy compliance, and FinOps opportunities within your cloud data platform.
+          </p>
+        </div>
+        <!-- Governance -->
+        <div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
+          <Icon name="tabler:database" class="w-10 h-10 text-blue-600 mb-6" />
+          <h3 class="text-xl font-bold mb-4">Governance Framework</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Ownership mapping, catalog inventory, and PII detection strategy to establish "Operational Truth."
+          </p>
+        </div>
+        <!-- AI/ML Strategy -->
+        <div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
+          <Icon name="tabler:robot" class="w-10 h-10 text-purple-600 mb-6" />
+          <h3 class="text-xl font-bold mb-4">AI Implementation Roadmap</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            A prioritized list of use cases (Anomaly Detection, Forecasting, LLMs) based on your target data availability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8">
+        Ready for a Reality Check?
+      </h2>
+      <p class="text-xl text-slate-600 dark:text-slate-400 mb-12">
+        Schedule your unified Data & AI Readiness Assessment today.
+      </p>
+      <a href="mailto:ethiraj.k@dataadvisors.ai" class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-orange-600 rounded-xl hover:bg-orange-700 transition-all shadow-xl shadow-orange-600/20">
+        Contact Ethiraj Today
+        <Icon name="tabler:arrow-right" class="w-5 h-5 ml-3" />
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('demo-video');
+    
+    if (video) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch((e) => console.log('Autoplay prevented:', e));
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(video);
+    }
+  });
+</script>

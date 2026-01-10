@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataAdvisors - Services Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #ffffff;
+        }
+
+        .services-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.card-stabilize::before {
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+        }
+
+        .service-card.card-stabilize:hover {
+            border-color: #dc2626;
+            box-shadow: 0 12px 24px rgba(220, 38, 38, 0.1);
+        }
+
+        .service-card.card-optimize::before {
+            background: linear-gradient(90deg, #059669, #10b981);
+        }
+
+        .service-card.card-optimize:hover {
+            border-color: #059669;
+            box-shadow: 0 12px 24px rgba(5, 150, 105, 0.1);
+        }
+
+        .service-stage {
+            font-size: 12px;
+            font-weight: 700;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .card-stabilize .service-stage {
+            color: #dc2626;
+        }
+
+        .card-build .service-stage {
+            color: #2563eb;
+        }
+
+        .card-optimize .service-stage {
+            color: #059669;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #f3f4f6;
+        }
+
+        .card-stabilize .service-icon {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .card-build .service-icon {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        .card-optimize .service-icon {
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        .service-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .service-tagline {
+            font-size: 15px;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .service-description {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .service-timeline {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #111827;
+            background: #f3f4f6;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+        }
+
+        .service-subsection {
+            margin-bottom: 20px;
+        }
+
+        .subsection-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111827;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            font-size: 15px;
+            color: #4b5563;
+            padding-left: 24px;
+            margin-bottom: 8px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .card-stabilize .service-list li::before {
+            color: #dc2626;
+        }
+
+        .card-optimize .service-list li::before {
+            color: #059669;
+        }
+
+        .decision-guide {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        .guide-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+
+        .guide-description {
+            font-size: 17px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .decision-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .decision-card {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 24px;
+            text-align: left;
+        }
+
+        .decision-scenario {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .decision-text {
+            font-size: 15px;
+            color: #4b5563;
+            margin-bottom: 12px;
+        }
+
+        .decision-recommendation {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            padding-top: 12px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .decision-recommendation span {
+            color: #2563eb;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+        }
+
+        .proof-points {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .proof-point {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .proof-point::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .card-stabilize .proof-point::before {
+            color: #dc2626;
+        }
+
+        .card-optimize .proof-point::before {
+            color: #059669;
+        }
+
+        .proof-point strong {
+            color: #111827;
+        }
+
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 60px 16px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .section-subtitle {
+                font-size: 18px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .service-card {
+                padding: 32px 24px;
+            }
+
+            .decision-options {
+                grid-template-columns: 1fr;
+            }
+
+            .decision-guide {
+                padding: 32px 24px;
+            }
+        }
+
+        /* Arrow connector visual */
+        .journey-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .journey-step {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border: 2px solid #e5e7eb;
+        }
+
+        .journey-arrow {
+            font-size: 24px;
+            color: #9ca3af;
+            font-weight: 700;
+        }
+
+        .journey-step-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .journey-step:nth-child(1) .journey-step-label {
+            color: #dc2626;
+        }
+
+        .journey-step:nth-child(3) .journey-step-label {
+            color: #2563eb;
+        }
+
+        .journey-step:nth-child(5) .journey-step-label {
+            color: #059669;
+        }
+
+        .journey-step-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        @media (max-width: 768px) {
+            .journey-visual {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .journey-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="services-section">
+        <!-- Header -->
+        <div class="section-header">
+            <div class="section-label">Our Services</div>
+            <h2 class="section-title">From Chaos to Operational Clarity</h2>
+            <p class="section-subtitle">
+                Three specialized streams designed for asset-heavy operations where decisions can't wait for IT projects.
+            </p>
+        </div>
+
+        <!-- Journey Visual -->
+        <div class="journey-visual">
+            <div class="journey-step">
+                <div class="journey-step-label">Stabilize</div>
+                <div class="journey-step-title">Trust the Numbers</div>
+            </div>
+            <div class="journey-arrow">→</div>
+            <div class="journey-step">
+                <div class="journey-step-label">Build</div>
+                <div class="journey-step-title">Scale the Foundation</div>
+            </div>
+            <div class="journey-arrow">→</div>
+            <div class="journey-step">
+                <div class="journey-step-label">Optimize</div>
+                <div class="journey-step-title">Apply Intelligence</div>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <!-- Service 1: Trusted Reporting -->
+            <div class="service-card card-stabilize">
+                <div class="service-stage">Step 1: Stabilize</div>
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Trusted Reporting</h3>
+                <p class="service-tagline">For teams drowning in spreadsheet reconciliation</p>
+                <p class="service-description">
+                    Replace fragile Excel workflows with reporting leadership actually trusts and uses daily.
+                </p>
+                <div class="service-timeline">⏱ Delivered in 2-3 weeks</div>
+
+                <div class="service-subsection">
+                    <div class="subsection-title">What You Get</div>
+                    <ul class="service-list">
+                        <li>Single source of truth across ops, finance, and management</li>
+                        <li>Weekly or daily automated updates (no more manual pulls)</li>
+                        <li>Clear data ownership and validation rules</li>
+                        <li>Dashboards leadership actually opens</li>
+                    </ul>
+                </div>
+
+                <div class="service-subsection">
+                    <div class="subsection-title">When You Need This</div>
+                    <ul class="service-list">
+                        <li>Different teams report different numbers in meetings</li>
+                        <li>Month-end reporting takes 3-5 days of manual work</li>
+                        <li>Leadership questions numbers more than they use them</li>
+                        <li>Your operations are growing but reporting hasn't scaled</li>
+                    </ul>
+                </div>
+
+                <div class="proof-points">
+                    <div class="proof-point"><strong>Real Impact:</strong> Month-end close reduced from 5 days to 4 hours</div>
+                    <div class="proof-point"><strong>Real Impact:</strong> 90% reduction in "which number is right?" debates</div>
+                </div>
+            </div>
+
+            <!-- Service 2: Data Foundations -->
+            <div class="service-card card-build">
+                <div class="service-stage">Step 2: Build</div>
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <path d="M3 9h18"></path>
+                        <path d="M9 21V9"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Data Foundations</h3>
+                <p class="service-tagline">For companies outgrowing spreadsheets</p>
+                <p class="service-description">
+                    Build pragmatic data platforms that support growth without disrupting field operations.
+                </p>
+                <div class="service-timeline">⏱ Delivered in 4-8 weeks</div>
+
+                <div class="service-subsection">
+                    <div class="subsection-title">What You Get</div>
+                    <ul class="service-list">
+                        <li>Modern cloud lakehouse architecture (Azure, GCP, AWS)</li>
+                        <li>Governed data layer with clear access controls</li>
+                        <li>Integration with ERP, field systems, and finance tools</li>
+                        <li>Scalable foundation for future analytics and AI</li>
+                    </ul>
+                </div>
+
+                <div class="service-subsection">
+                    <div class="subsection-title">When You Need This</div>
+                    <ul class="service-list">
+                        <li>Data lives in 5+ disconnected systems</li>
+                        <li>Every new report requires custom extraction work</li>
+                        <li>You want self-service but can't trust the data</li>
+                        <li>IT timeline is 12-18 months but you need results now</li>
+                    </ul>
+                </div>
+
+                <div class="proof-points">
+                    <div class="proof-point"><strong>Real Impact:</strong> 7 data sources unified into single governed platform</div>
+                    <div class="proof-point"><strong>Real Impact:</strong> Self-service analytics without sacrificing control</div>
+                </div>
+            </div>
+
+            <!-- Service 3: Intelligent Automation -->
+            <div class="service-card card-optimize">
+                <div class="service-stage">Step 3: Optimize</div>
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path>
+                        <path d="M16.24 7.76l-2.12 2.12"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Intelligent Automation</h3>
+                <p class="service-tagline">Only after foundations are trusted</p>
+                <p class="service-description">
+                    Apply AI where it creates real operational value—not for innovation theater.
+                </p>
+                <div class="service-timeline">⏱ When foundations are ready</div>
+
+                <div class="service-subsection">
+                    <div class="subsection-title">What You Get</div>
+                    <ul class="service-list">
+                        <li>Demand forecasting that improves planning accuracy</li>
+                        <li>Anomaly detection for equipment, inventory, or processes</li>
+                        <li>Automated workflows reducing manual intervention</li>
+                        <li>Production-ready models with monitoring and governance</li>
+                    </ul>
+                </div>
+
+                <div class="service-subsection">
+                    <div class="subsection-title">When You Need This</div>
+                    <ul class="service-list">
+                        <li>Reporting is trusted and you're ready for predictions</li>
+                        <li>Manual processes are operational bottlenecks</li>
+                        <li>You want to catch problems before they become incidents</li>
+                        <li>Leadership asks "what will happen?" not "what happened?"</li>
+                    </ul>
+                </div>
+
+                <div class="proof-points">
+                    <div class="proof-point"><strong>Real Impact:</strong> Equipment anomalies detected 48 hours before failure</div>
+                    <div class="proof-point"><strong>Real Impact:</strong> Forecast accuracy improved 35% in first quarter</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decision Guide -->
+        <div class="decision-guide">
+            <h3 class="guide-title">Which Service Do You Need?</h3>
+            <p class="guide-description">
+                Not sure where to start? Here's how similar Houston energy and industrial teams typically engage with us.
+            </p>
+
+            <div class="decision-options">
+                <div class="decision-card">
+                    <div class="decision-scenario">If you're here:</div>
+                    <p class="decision-text">
+                        "We debate numbers in every meeting. Leadership doesn't trust our reports. Excel is breaking."
+                    </p>
+                    <div class="decision-recommendation">
+                        Start with: <span>Trusted Reporting</span>
+                    </div>
+                </div>
+
+                <div class="decision-card">
+                    <div class="decision-scenario">If you're here:</div>
+                    <p class="decision-text">
+                        "Reports are okay, but data is scattered everywhere. We can't scale. Every ask is custom work."
+                    </p>
+                    <div class="decision-recommendation">
+                        Start with: <span>Data Foundations</span>
+                    </div>
+                </div>
+
+                <div class="decision-card">
+                    <div class="decision-scenario">If you're here:</div>
+                    <p class="decision-text">
+                        "Our data is clean and trusted. Now we want predictive insights, automation, and smarter operations."
+                    </p>
+                    <div class="decision-recommendation">
+                        Start with: <span>Intelligent Automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#contact" class="cta-button">Book a Strategy Call</a>
+        </div>
+    </section>
+</body>
+</html>
